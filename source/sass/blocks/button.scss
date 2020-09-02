@@ -1,0 +1,40 @@
+.button {
+  background-color: var(--accent-color);
+  color: var(--main-color--lighter2);
+}
+
+.button--round {
+  padding: 0.97em 1em 0.75em;
+  border-radius: 25px;
+
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 123%;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  transition: background-color 0.03s;
+
+  &:hover {
+    background-color: var(--accent-color2);
+    transition: background-color 0.01s;
+  }
+
+  &:active {
+    color: var(--main-color--hover);
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width - 140px) {
+  .button--round {
+    padding: 0.67em 1.45em 0.6em;
+    font-size: 1.25rem;
+  }
+}

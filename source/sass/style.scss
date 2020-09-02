@@ -1,8 +1,24 @@
 ///////////////////////////////////
-//      Ключевые правила        ///
+//       Ключевые правила        //
 ///////////////////////////////////
 
 @import "_global-variables.scss";
 @import "_at-rules.scss";
 @import "_custom-properties.scss";
 @import "_global-mixins.scss";
+
+
+///////////////////////////////////
+//         Правила блоков        //
+///////////////////////////////////
+
+// Стили, общие для всей страницы
+@import "blocks/page-body.scss";
+
+// Глобальные стили
+@import "blocks/button.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/contact-methods.scss";
+
+// Локальные стили
+@import "blocks/page-header.scss";

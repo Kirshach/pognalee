@@ -1,3 +1,29 @@
 :root {
   // Глобальные цвета
+  --main-color: #161c36;
+  --main-color--hover: rgba(22, 28, 54, 0.3);
+  --main-color--lighter: #192144;
+  --main-color--lighter2: #1d2e5b;
+  --main-color--darker: #121936;
+  --main-color-darker2: #132576;
+  --secondary-color: #e6e8f1;
+  --secondary-color--lighter: #edeff6;
+  --ternary-color: #ffffff;
+
+  --accent-color: #ffd74b;
+  --accent-color2: #ffbd30;
+  --accent-color3: #ffa530;
+  --accent-color4: #ff8d30;
+
+
+  // Паддинги страниц
+  --page-padding: calc(10% - 7px);
+
+  @media (min-width: $tablet-width) {
+    --page-padding: max(calc(10% - 37px), 33px);
+  }
+
+  @media (min-width: $desktop-width) {
+    --page-padding: calc(10% - 10px);
+  }
 }

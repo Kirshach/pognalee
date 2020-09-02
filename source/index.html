@@ -2,46 +2,105 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Academy: Погнали</title>
     <link rel="stylesheet" href="css/style.min.css">
+
+
+
+    <!-- Pixel Glass -->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position:  50% 0;
+        background-image: url( "pixel-glass/mobile-index.png" );
+      }
+      @media ( min-width: 768px ) {
+        HTML {
+          background-image: url( "pixel-glass/tablet-index.png" );
+        }
+      }
+      @media ( min-width: 1440px ) {
+        HTML {
+          background-image: url( "pixel-glass/desktop-index.png" );
+        }
+      }
+    </style>
+    <link href="pixel-glass/styles.css" rel="stylesheet">
+    <script src="pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
+
+
+
   </head>
-  <body>
+  <body class="page-body">
     <header class="page-header">
       <div class="page-header__top-container">
-        <a class="page-header__site-logo site-logo site-logo--dark" aria-label="Погнали? Главная страница">
-
+        <a class="page-header__site-logo-link" aria-label="Погнали? Главная страница">
+          <picture>
+            <source media="(min-width: 600px)" type="image/webp" srcset="img/logo-tablet-blue@1x.webp 1x, img/logo-tablet-blue@2x.webp 2x">
+            <source media="(min-width: 600px)" srcset="img/logo-tablet-blue@1x.png 1x, img/logo-tablet-blue@2x.png 2x">
+            <source type="image/webp" srcset="img/logo-mobile-blue@1x.webp 1x, img/logo-mobile-blue@2x.webp 2x">
+            <img class="page-header__site-logo-img" src="img/logo-mobile-blue@1x.png" srcset="img/logo-mobile-blue@2x.png 2x" alt="Погнали?">
+          </picture>
         </a>
         <button class="page-header__menu-toggler" aria-label="Меню сайта">
-
+          <svg class="page-header__menu-toggler-svg" width="25" height="19">
+            <rect class="page-header__menu-toggler-top" x="0" y="4" width="25" height="3" rx="1.5" fill="#cccccc"/>
+            <rect class="page-header__menu-toggler-bottom" x="0" y="12" width="25" height="3" rx="1.5" fill="#cccccc"/>
+          </svg>
         </button>
       </div>
       <div class="page-header__bottom-container">
-        <ul class="main-nav">
-          <li class="main-nav__item">
-            <a class="main-nav__link">О сервисе</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="">Направления</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link" href="">Попутчики</a>
-          </li>
-        </ul>
-        <a class="page-header__authorize-button" href="">Авторизация</a>
+        <nav class="page-header__main-nav main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link">О сервисе</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">Направления</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="">Попутчики</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="page-header__authorize-button button button--round" href="">Авторизация</a>
         <div class="page-header__contact-methods contact-methods">
-          <a class="contact-methods__phone " href="tel:+78005558626">8 800 555-86-26</a>
-          <a class="contact-methods__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+          <div class="contact-methods__item">
+            <a class="contact-methods__link" href="tel:+78005558626">8 800 555-86-28</a>
+            <svg class="contact-methods__icon" width="45" height="45">
+              <use href="img/sprite.svg#icon-phone-big"/>
+            </svg>
+          </div>
+          <div class="contact-methods__item">
+            <a class="contact-methods__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            <svg class="contact-methods__icon" width="45" height="45">
+              <use href="img/sprite.svg#icon-email-big"/>
+            </svg>
+          </div>
         </div>
         <ul class="page-header__socials socials">
-          <li class="socials-item">
-            <a class="socials-link" href=""></a>
+          <li class="page-header__socials-item">
+            <a class="page-header__socials-link" href="">
+              <svg class="page-header__socials-svg" width="45" height="45">
+                <use href="img/sprite.svg#icon-fb"/>
+              </svg>
+            </a>
           </li>
-          <li class="socials-item">
-            <a class="socials-link" href=""></a>
+          <li class="page-header__socials-item">
+            <a class="page-header__socials-link" href="">
+              <svg class="page-header__socials-svg" width="45" height="45">
+                <use href="img/sprite.svg#icon-vk"/>
+              </svg>
+            </a>
           </li>
-          <li class="socials-item">
-            <a class="socials-link" href=""></a>
+          <li class="page-header__socials-item">
+            <a class="page-header__socials-link" href="">
+              <svg class="page-header__socials-svg" width="45" height="45">
+                <use href="img/sprite.svg#icon-instagram"/>
+              </svg>
+            </a>
           </li>
         </ul>
       </div>
@@ -244,5 +303,6 @@
       </ul>
       <a class="page-footer__developed-by">Разработано</a>
     </footer>
+    <script src="js/script-min.js"></script>
   </body>
 </html>

@@ -1,6 +1,10 @@
 "use strict"
 
-let emptyLinks = document.querySelectorAll('a[href="#"]');
+///////////////////////////////////
+//       Глобальные скрипты      //
+///////////////////////////////////
+
+let emptyLinks = document.querySelectorAll('a[href=""]');
 if (emptyLinks.length !== 0) {
   for (let link of emptyLinks) {
     link.onclick = function(event) {
@@ -8,6 +12,30 @@ if (emptyLinks.length !== 0) {
     }
   }
 }
+
+
+///////////////////
+//    Скрипты меню
+//////////////////
+
+let headerToggler = document.querySelector('.page-header__menu-toggler');
+if (headerToggler !== undefined) {
+  // Добавляем js-активные классы
+  let bottomContainer = document.querySelector('.page-header__bottom-container');
+  bottomContainer.classList.add('page-header__bottom-container--has-js', 'page-header__bottom-container--closed');
+  headerToggler.classList.add('page-header__menu-toggler--has-js');
+
+  // Добавляем активность переключателю меню
+  headerToggler.onclick = function() {
+    headerToggler.classList.toggle('page-header__menu-toggler--closed');
+    bottomContainer.classList.toggle('page-header__bottom-container--closed');
+  };
+}
+
+
+///////////////////////////////////
+//    Полифилл focus-visible     //
+///////////////////////////////////
 
 /**
  * Applies the :focus-visible polyfill at the given scope.

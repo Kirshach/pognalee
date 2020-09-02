@@ -1,4 +1,8 @@
 // Брейкпойнты медиа-среды
-$mobile-width: 0px;
-$tablet-width: 0px;
-$desktop-width: 0px;
+$mobile-width: 320px;
+$tablet-width: 600px;
+$desktop-width: 1200px;
+
+// Шрифт и его фоллбэки
+$font-stack: "Blogger Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+

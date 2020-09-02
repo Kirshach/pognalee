@@ -1,0 +1,101 @@
+.contact-methods {
+  width: $mobile-width - 50px;
+
+  font-weight: 700;
+  line-height: 112%;
+
+  text-transform: uppercase;
+}
+
+.contact-methods__item {
+  position: relative;
+
+  height: 45px;
+}
+
+.contact-methods__icon {
+  background-color: var(--main-color--darker);
+  border-radius: 50%;
+
+  fill: var(--accent-color);
+  transition: fill 0.03s;
+}
+
+.contact-methods__link {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 53px;
+
+  height: 1.875em;
+  padding: 0.5em;
+
+  transform: translateY(-50%);
+
+  &:hover + .contact-methods__icon {
+    fill: var(--accent-color2);
+    transition: fill 0.01s;
+  }
+}
+
+@media (min-width: $mobile-width + 140px) {
+  .contact-methods {
+    font-size: 1.15rem;
+  }
+
+  .contact-methods__item {
+    height: 50px;
+  }
+
+  .contact-methods__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-methods__link {
+    left: 60px;
+  }
+}
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+  .contact-methods {
+    width: 100%;
+
+    font-size: 1.45rem;
+  }
+
+  .contact-methods__item {
+    height: 57px;
+  }
+
+  .contact-methods__icon {
+    width: 57px;
+    height: 57px;
+  }
+
+  .contact-methods__link {
+    left: 65px;
+  }
+
+  @media (min-width: $tablet-width + 168px) {
+    .contact-methods {
+      font-size: 1.75rem;
+    }
+
+    .contact-methods__item {
+      height: 68px;
+    }
+
+    .contact-methods__icon {
+      width: 68px;
+      height: 68px;
+    }
+
+    .contact-methods__link {
+      left: 77px;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.main-nav {
+  width: max-content;
+  max-width: 100%;
+
+  font-family: $font-stack;
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 90%;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: $mobile-width + 140px) {
+    font-size: 2.2rem;
+  }
+}
+
+.main-nav__item {
+  display: block;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.27em;
+}
+
+.main-nav__list {
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav__link {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.main-nav__link[href] {
+  &:hover {
+    opacity: 0.6;
+    transition: opacity 0.03s ease-in;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: opacity 0.02s ease-in-out;
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+    max-width: calc(100% - 2 * (var(--page-padding) + 57px));
+
+    font-size: 2.75rem;
+
+    text-align: left;
+
+    @media (min-width: $tablet-width + 168px) {
+      font-size: 3.75rem;
+    }
+  }
+
+  .main-nav__item {
+    margin-bottom: 0.29em;
+  }
+
+  .main-nav__link {
+    // padding: 0;
+    margin: 0;
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на десктопе     //
+///////////////////////////////////
