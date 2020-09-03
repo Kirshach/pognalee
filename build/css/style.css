@@ -89,7 +89,8 @@
     color: inherit; }
 
 @media (min-width: 1200px) {
-  padding-top: 0; }
+  .page-body {
+    padding-top: 0; } }
 
 .button {
   background-color: var(--accent-color);
@@ -305,7 +306,6 @@
   padding: 48.5px var(--page-padding) 25px;
   background-color: inherit;
   transform: translateX(0);
-  transition: all 0.5s;
   background-color: var(--ternary-color); }
 
 .page-header__bottom-container--has-js {
@@ -318,8 +318,7 @@
   height: calc((var(--vh, 1vh) * 100) - var(--header-top-height)); }
 
 .page-header__bottom-container--closed {
-  transform: translateX(100%);
-  transition: all 0.7s; }
+  transform: translateX(100%); }
 
 .page-header__main-nav {
   margin-bottom: 32.5px;

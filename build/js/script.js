@@ -26,19 +26,50 @@ if (headerToggler !== undefined) {
   headerToggler.classList.add('page-header__menu-toggler--has-js');
 
   // Добавляем активность переключателю меню
+  let pageBody = document.querySelector('.page-body');
   headerToggler.onclick = function() {
+    // Данным блоком if - else блокируем скролл тела страницы во время открытия меню
+    // и сохраняем положение тела страницы при закрытии меню
+    // (код украден с css-tricks: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/ )
+    if (headerToggler.classList.contains('page-header__menu-toggler--closed')) {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    } else {
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.position = 'fixed';
+    }
+    // Добавляем/снимаем непосредственно классы на переключатель и меню
     headerToggler.classList.toggle('page-header__menu-toggler--closed');
     bottomContainer.classList.toggle('page-header__bottom-container--closed');
   };
 
-  // Находим высоту реального окна браузера без учёта панели навигации
+  // Находим vh реального вьюпорта мобильного браузера без учёта его панели навигации
+  // для имитации тру "фуллскрина" меню без риска получить в нём ненужный скролл
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+  // и обновляем vh при ресайзе реального вьюпорта
   window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
+
+  /////
+  // Назначаем переходы через JS чтобы избежать анимации при загрузке
+  /////
+
+  // Создаём стилевой объект и присваиваем ему значение
+  let style = document.createElement('style');
+  style.innerHTML = `
+  .page-header__bottom-container--has-js { transition: all 0.7s }
+  .page-header__bottom-container--closed { transition: all 0.7s ease-out }
+  `;
+
+  // Вставляем его перед первым тегом скрипта
+  let ref = document.querySelector('script');
+  ref.parentNode.insertBefore(style, ref);
 }
 
 
