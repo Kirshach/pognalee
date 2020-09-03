@@ -2,9 +2,7 @@ $menu-toggler-width: 35px;
 $header-top-height: 73px;
 
 .page-header {
-  display: flex;
   flex-direction: column;
-  background-color: var(--ternary-color);
 
   overflow: hidden;
 }
@@ -14,14 +12,19 @@ $header-top-height: 73px;
 //////////
 
 .page-header__top-container {
-  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $header-top-height;
 
+  width: 100vw;
   padding: 0 var(--page-padding);
+
+  background-color: var(--ternary-color);
 }
 
 .page-header__site-logo-link {
@@ -108,10 +111,12 @@ $header-top-height: 73px;
   transform: translateX(0);
 
   transition: all 0.5s;
+
+  background-color: var(--ternary-color);
 }
 
 .page-header__bottom-container--has-js {
-  position: absolute;
+  position: fixed;
   top: $header-top-height;
   left: 0;
 
