@@ -14,16 +14,18 @@ if (emptyLinks.length !== 0) {
 }
 
 
-///////////////////
-//    Скрипты меню
-//////////////////
+///////////////////////////////////
+//         Скрипты меню          //
+///////////////////////////////////
 
 let headerToggler = document.querySelector('.page-header__menu-toggler');
 if (headerToggler !== undefined) {
   // Добавляем js-активные классы
   let bottomContainer = document.querySelector('.page-header__bottom-container');
+  let topContainer = document.querySelector('.page-header__top-container');
   bottomContainer.classList.add('page-header__bottom-container--has-js', 'page-header__bottom-container--closed');
-  headerToggler.classList.add('page-header__menu-toggler--has-js');
+  headerToggler.classList.add('page-header__menu-toggler--has-js', 'page-header__menu-toggler--closed');
+  topContainer.classList.add('page-header__top-container--is-on-top');
 
   // Добавляем активность переключателю меню
   let pageBody = document.querySelector('.page-body');
@@ -32,21 +34,23 @@ if (headerToggler !== undefined) {
     // и сохраняем положение тела страницы при закрытии меню
     // (код украден с css-tricks: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/ )
     if (headerToggler.classList.contains('page-header__menu-toggler--closed')) {
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.position = 'fixed';
+    } else {
       const scrollY = document.body.style.top;
       document.body.style.position = '';
       document.body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    } else {
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.position = 'fixed';
     }
     // Добавляем/снимаем непосредственно классы на переключатель и меню
     headerToggler.classList.toggle('page-header__menu-toggler--closed');
     bottomContainer.classList.toggle('page-header__bottom-container--closed');
+    topContainer.classList.toggle('page-header__top-container--modal-mode');
   };
 
   // Находим vh реального вьюпорта мобильного браузера без учёта его панели навигации
   // для имитации тру "фуллскрина" меню без риска получить в нём ненужный скролл
+  // (код украден с css-tricks: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ )
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
@@ -63,13 +67,33 @@ if (headerToggler !== undefined) {
   // Создаём стилевой объект и присваиваем ему значение
   let style = document.createElement('style');
   style.innerHTML = `
-  .page-header__bottom-container--has-js { transition: all 0.7s }
-  .page-header__bottom-container--closed { transition: all 0.7s ease-out }
+  .page-header__bottom-container--has-js { transition: left 0.5s }
+  .page-header__bottom-container--closed { transition: left 0.5s ease-out }
+  .page-header__menu-toggler rect { transition: transform 0.2s }
   `;
 
   // Вставляем его перед первым тегом скрипта
   let ref = document.querySelector('script');
   ref.parentNode.insertBefore(style, ref);
+
+  /////
+  // Контролируем визуальное отображение шапки в зависимости от скролла
+  /////
+
+  window.addEventListener('scroll', function() {
+    let breakpoint = 50;
+    let scroll = window.scrollY;
+
+    if (window.innerWidth >= 1200) breakpoint = 78;
+
+    if (scroll > breakpoint && topContainer.classList.contains('page-header__top-container--is-on-top')) {
+      topContainer.classList.remove('page-header__top-container--is-on-top');
+    } else if (scroll < breakpoint - 20 && !topContainer.classList.contains('page-header__top-container--is-on-top')) {
+      if (!topContainer.classList.contains('page-header__top-container--modal-mode')) {
+        topContainer.classList.add('page-header__top-container--is-on-top');
+      }
+    }
+  });
 }
 
 

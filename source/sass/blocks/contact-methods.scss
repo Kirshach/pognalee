@@ -60,7 +60,7 @@
 //     Раскладка на планшете     //
 ///////////////////////////////////
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width) and (min-height: $tablet-width) {
   .contact-methods {
     width: 100%;
 
@@ -80,7 +80,7 @@
     left: 65px;
   }
 
-  @media (min-width: $tablet-width + 168px) {
+  @media (min-width: $tablet-width + 168px) and (min-height: $tablet-width + 168px) {
     .contact-methods {
       font-size: 1.75rem;
     }

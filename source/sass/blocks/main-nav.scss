@@ -50,7 +50,7 @@
 //     Раскладка на планшете     //
 ///////////////////////////////////
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width) and (min-height: $tablet-width) {
   .main-nav {
     max-width: calc(100% - 2 * (var(--page-padding) + 57px));
 
@@ -58,7 +58,7 @@
 
     text-align: left;
 
-    @media (min-width: $tablet-width + 168px) {
+    @media (min-width: $tablet-width + 168px) and (min-height: $tablet-width) {
       font-size: 3.75rem;
     }
   }
@@ -76,3 +76,10 @@
 ///////////////////////////////////
 //     Раскладка на десктопе     //
 ///////////////////////////////////
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    font-size: 20px;
+    line-height: 100%;
+  }
+}

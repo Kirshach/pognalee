@@ -8,6 +8,7 @@
   --main-color-darker2: #132576;
   --secondary-color: #e6e8f1;
   --secondary-color--lighter: #edeff6;
+  --secondary-color--darker: #cccccc;
   --ternary-color: #ffffff;
 
   --accent-color: #ffd74b;
@@ -24,13 +25,13 @@
   }
 
   @media (min-width: $desktop-width) {
-    --page-padding: calc(10% - 10px);
+    --page-padding: calc(10% - 84px);
   }
 
   // Высота шапки страницы
   --header-top-height: 73px;
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) and (min-height: $tablet-width) {
     --header-top-height: 132px;
   }
 

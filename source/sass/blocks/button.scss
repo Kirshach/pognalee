@@ -26,15 +26,17 @@
   &:active {
     color: var(--main-color--hover);
   }
+
+  @media (min-width: $mobile-width + 140px) {
+    padding: 0.67em 1.45em 0.6em;
+    font-size: 1.25rem;
+  }
 }
 
 ///////////////////////////////////
 //     Раскладка на планшете     //
 ///////////////////////////////////
 
-@media (min-width: $tablet-width - 140px) {
-  .button--round {
-    padding: 0.67em 1.45em 0.6em;
-    font-size: 1.25rem;
-  }
+@media (min-width: $tablet-width ) {
+
 }

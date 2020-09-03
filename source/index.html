@@ -38,8 +38,8 @@
       <div class="page-header__top-container">
         <a class="page-header__site-logo-link" aria-label="Погнали? Главная страница">
           <picture>
-            <source media="(min-width: 600px)" type="image/webp" srcset="img/logo-tablet-blue@1x.webp 1x, img/logo-tablet-blue@2x.webp 2x">
-            <source media="(min-width: 600px)" srcset="img/logo-tablet-blue@1x.png 1x, img/logo-tablet-blue@2x.png 2x">
+            <source media="(min-width: 600px) and (min-height: 600px)" type="image/webp" srcset="img/logo-tablet-blue@1x.webp 1x, img/logo-tablet-blue@2x.webp 2x">
+            <source media="(min-width: 600px) and (min-height: 600px)" srcset="img/logo-tablet-blue@1x.png 1x, img/logo-tablet-blue@2x.png 2x">
             <source type="image/webp" srcset="img/logo-mobile-blue@1x.webp 1x, img/logo-mobile-blue@2x.webp 2x">
             <img class="page-header__site-logo-img" src="img/logo-mobile-blue@1x.png" srcset="img/logo-mobile-blue@2x.png 2x" alt="Погнали?">
           </picture>
@@ -65,19 +65,25 @@
             </li>
           </ul>
         </nav>
-        <a class="page-header__authorize-button button button--round" href="">Авторизация</a>
-        <div class="page-header__contact-methods contact-methods">
-          <div class="contact-methods__item">
-            <a class="contact-methods__link" href="tel:+78005558626">8 800 555-86-28</a>
-            <svg class="contact-methods__icon" width="45" height="45">
-              <use href="img/sprite.svg#icon-phone-big"/>
-            </svg>
-          </div>
-          <div class="contact-methods__item">
-            <a class="contact-methods__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-            <svg class="contact-methods__icon" width="45" height="45">
-              <use href="img/sprite.svg#icon-email-big"/>
-            </svg>
+        <div class="page-header__user-container">
+          <a class="page-header__authorize-button button button--round" href="">Авторизация</a>
+          <div class="page-header__contact-methods contact-methods">
+            <div class="contact-methods__item">
+              <a class="contact-methods__link" href="tel:+78005558626">
+                <span class="contact-methods__span">8 800 555-86-28</span>
+              </a>
+              <svg class="contact-methods__icon" width="45" height="45">
+                <use href="img/sprite.svg#icon-phone-big"/>
+              </svg>
+            </div>
+            <div class="contact-methods__item">
+              <a class="contact-methods__link" href="mailto:mail@htmlacademy.ru">
+                <span class="contact-methods__span">mail@htmlacademy.ru</span>
+              </a>
+              <svg class="contact-methods__icon" width="45" height="45">
+                <use href="img/sprite.svg#icon-email-big"/>
+              </svg>
+            </div>
           </div>
         </div>
         <ul class="page-header__socials socials">
