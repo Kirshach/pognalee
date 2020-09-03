@@ -30,6 +30,15 @@ if (headerToggler !== undefined) {
     headerToggler.classList.toggle('page-header__menu-toggler--closed');
     bottomContainer.classList.toggle('page-header__bottom-container--closed');
   };
+
+  // Находим высоту реального окна браузера без учёта панели навигации
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
 }
 
 

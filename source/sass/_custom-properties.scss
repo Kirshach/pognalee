@@ -26,4 +26,15 @@
   @media (min-width: $desktop-width) {
     --page-padding: calc(10% - 10px);
   }
+
+  // Высота шапки страницы
+  --header-top-height: 73px;
+
+  @media (min-width: $tablet-width) {
+    --header-top-height: 132px;
+  }
+
+  @media (min-width: $desktop-width) {
+    --header-top-height: 90px;
+  }
 }

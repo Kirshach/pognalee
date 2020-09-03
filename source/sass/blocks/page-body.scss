@@ -1,6 +1,7 @@
 .page-body {
   min-width: 320px;
   padding: 0;
+  padding-top: var(--header-top-height);
   margin: 0;
   font-family: $font-stack;
   font-size: 16px;
@@ -19,4 +20,8 @@
   a:visited {
     color: inherit;
   }
+}
+
+@media (min-width: $desktop-width) {
+  padding-top: 0;
 }
