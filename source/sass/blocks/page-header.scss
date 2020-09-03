@@ -12,6 +12,7 @@ $menu-toggler-width: 35px;
 
 .page-header__top-container {
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
 
@@ -25,21 +26,6 @@ $menu-toggler-width: 35px;
 
   background-color: var(--ternary-color);
   transition: background-color 0.16s ease-in;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--ternary-color);
-
-    transform: translateX(100vw);
-    transition: transform 0.5s ease-out;
-  }
 }
 
 .page-header__top-container--is-on-top {
@@ -59,11 +45,6 @@ $menu-toggler-width: 35px;
 }
 
 .page-header__top-container--modal-mode {
-  &::before {
-    transform: translateX(0);
-    transition: transform 0.5s;
-  }
-
   .page-header__menu-toggler rect {
     fill: var(--secondary-color--darker);
     transition: fill 0.3s ease-out, transform 0.2s;
@@ -170,26 +151,25 @@ $menu-toggler-width: 35px;
   justify-content: space-between;
   align-items: center;
 
-  height: unquote('max(calc(100vh - 73px), 500px)');
+  height: unquote('max(100vh, 570px)');
   max-height: 900px;
-  padding: 48.5px var(--page-padding) 25px;
+  padding: calc(48.5px + var(--header-top-height)) var(--page-padding) 25px;
 
   background-color: var(--ternary-color);
 }
 
 .page-header__bottom-container--has-js {
   position: fixed;
-  top: var(--header-top-height);
+  top: 0;
   left: 0;
 
-  z-index: 3;
+  z-index: 2;
 
   width: 100vw;
   min-width: $mobile-width;
-  // height: calc(100vh - var(--header-top-height));
   // Переменная --vh задаётся специальным скриптом и используется для
   // определения реальной высоты вьюпорта без учёта панели навигации
-  height: calc((var(--vh, 1vh) * 100) - var(--header-top-height));
+  height: calc((var(--vh, 1vh) * 100));
   overflow: scroll;
 }
 
@@ -351,9 +331,9 @@ $menu-toggler-width: 35px;
     justify-content: space-between;
     align-items: start;
 
-    height: unquote('max(calc(100vh - var(--header-top-height)), 500px)');
+    height: unquote('max(100vh, 630px)');
     max-height: 1600px;
-    padding: 30px calc(var(--page-padding) + 57px) 32px;
+    padding: calc(30px + var(--header-top-height)) calc(var(--page-padding) + 57px) 32px;
   }
 
   .page-header__main-nav {
@@ -362,8 +342,8 @@ $menu-toggler-width: 35px;
 
   @media (min-width: $tablet-width + 168px) and (min-height: $tablet-width + 168px) {
     .page-header__bottom-container {
-      height: unquote('max(calc(100vh - var(--header-top-height)), 700px)');
-      padding: 61px calc(var(--page-padding) + 57px) 72px;
+      height: unquote('max(100vh, px)');
+      padding: calc(61px + var(--header-top-height)) calc(var(--page-padding) + 57px) 72px;
     }
 
     .page-header__main-nav {

@@ -58,7 +58,7 @@
 
     text-align: left;
 
-    @media (min-width: $tablet-width + 168px) and (min-height: $tablet-width) {
+    @media (min-width: $tablet-width + 168px) and (min-height: $tablet-width + 100px) {
       font-size: 3.75rem;
     }
   }

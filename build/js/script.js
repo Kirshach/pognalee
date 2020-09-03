@@ -21,8 +21,10 @@ if (emptyLinks.length !== 0) {
 let headerToggler = document.querySelector('.page-header__menu-toggler');
 if (headerToggler !== undefined) {
   // Добавляем js-активные классы
+  let pageHeader = document.querySelector('.page-header');
   let bottomContainer = document.querySelector('.page-header__bottom-container');
   let topContainer = document.querySelector('.page-header__top-container');
+  pageHeader.classList.add('page-header--has-js')
   bottomContainer.classList.add('page-header__bottom-container--has-js', 'page-header__bottom-container--closed');
   headerToggler.classList.add('page-header__menu-toggler--has-js', 'page-header__menu-toggler--closed');
   topContainer.classList.add('page-header__top-container--is-on-top');
