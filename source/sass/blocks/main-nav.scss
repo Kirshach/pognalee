@@ -35,14 +35,17 @@
 }
 
 .main-nav__link[href] {
+
+  transition: opacity 0.13s ease-out;
+
   &:hover {
     opacity: 0.6;
-    transition: opacity 0.03s ease-in;
+    transition: opacity 0.02s ease-out;
   }
 
   &:active {
     opacity: 0.3;
-    transition: opacity 0.02s ease-in-out;
+    transition: opacity 0.02s ease-out;
   }
 }
 
@@ -81,5 +84,9 @@
   .main-nav {
     font-size: 20px;
     line-height: 100%;
+  }
+
+  .main-nav__item {
+    margin-bottom: 0;
   }
 }

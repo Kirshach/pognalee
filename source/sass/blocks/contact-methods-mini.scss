@@ -1,0 +1,49 @@
+.contact-methods-mini__link {
+  border-radius: 50%;
+  transition: background-color 0.1s ease-out;
+
+  &:hover {
+    transition: background-color 0.1s cubic-bezier(.19,.98,.57,.99);
+  }
+
+  &:active .contact-methods__mini-icon {
+    opacity: 0.3;
+  }
+}
+
+.contact-methods-mini__link--phone {
+  background-color: var(--accent-color4);
+
+  &:hover {
+    background-color: var(--accent-color5);
+  }
+}
+
+
+.contact-methods-mini__link--email {
+  background-color: var(--accent-color2);
+
+  &:hover {
+    background-color: var(--accent-color4);
+  }
+}
+
+
+///////////////////////////////////
+//     Раскладка на десктопе     //
+///////////////////////////////////
+
+@media (min-width: $desktop-width) {
+  .contact-methods__link {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    transform: none;
+  }
+
+  .contact-methods__mini-icon {
+    width: 50px;
+    height: 50px;
+    transform: scale(0.8);
+  }
+}

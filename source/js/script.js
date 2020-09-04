@@ -24,7 +24,7 @@ if (headerToggler !== undefined) {
   let pageHeader = document.querySelector('.page-header');
   let bottomContainer = document.querySelector('.page-header__bottom-container');
   let topContainer = document.querySelector('.page-header__top-container');
-  pageHeader.classList.add('page-header--has-js')
+  pageHeader.classList.add('page-header--has-js', 'page-header--is-on-top')
   bottomContainer.classList.add('page-header__bottom-container--has-js', 'page-header__bottom-container--closed');
   headerToggler.classList.add('page-header__menu-toggler--has-js', 'page-header__menu-toggler--closed');
   topContainer.classList.add('page-header__top-container--is-on-top');
@@ -32,7 +32,7 @@ if (headerToggler !== undefined) {
   // Добавляем активность переключателю меню
   let pageBody = document.querySelector('.page-body');
   headerToggler.onclick = function() {
-    // Данным блоком if - else блокируем скролл тела страницы во время открытия меню
+    // Блоком if - else блокируем скролл тела страницы во время открытия меню
     // и сохраняем положение тела страницы при закрытии меню
     // (код украден с css-tricks: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/ )
     if (headerToggler.classList.contains('page-header__menu-toggler--closed')) {
@@ -60,6 +60,19 @@ if (headerToggler !== undefined) {
   window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    if (window.innerWidth >= 1200) {
+      if (document.body.style.position === 'fixed') {
+        const scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+        headerToggler.classList.add('page-header__menu-toggler--closed');
+        bottomContainer.classList.add('page-header__bottom-container--closed');
+        topContainer.classList.remove('page-header__top-container--modal-mode');
+      }
+    }
   });
 
   /////
@@ -70,7 +83,7 @@ if (headerToggler !== undefined) {
   let style = document.createElement('style');
   style.innerHTML = `
   .page-header__bottom-container--has-js { transition: left 0.5s }
-  .page-header__bottom-container--closed { transition: left 0.5s ease-out }
+  .page-header__bottom-container--closed { transition: left 0.4s ease-out }
   .page-header__menu-toggler rect { transition: transform 0.2s }
   `;
 
@@ -86,13 +99,24 @@ if (headerToggler !== undefined) {
     let breakpoint = 50;
     let scroll = window.scrollY;
 
-    if (window.innerWidth >= 1200) breakpoint = 78;
+    if (window.innerWidth >= 1200) {
+      breakpoint = 92;
+      if (scrollY < 28) {
+        pageHeader.style.top = `calc(28px - ${scrollY}px)`;
+      } else {
+        pageHeader.style.top = `0px`
+      };
+    } else {
+      pageHeader.style.top = `0px`
+    }
 
     if (scroll > breakpoint && topContainer.classList.contains('page-header__top-container--is-on-top')) {
       topContainer.classList.remove('page-header__top-container--is-on-top');
+      pageHeader.classList.remove('page-header--is-on-top')
     } else if (scroll < breakpoint - 20 && !topContainer.classList.contains('page-header__top-container--is-on-top')) {
       if (!topContainer.classList.contains('page-header__top-container--modal-mode')) {
         topContainer.classList.add('page-header__top-container--is-on-top');
+        pageHeader.classList.add('page-header--is-on-top')
       }
     }
   });
