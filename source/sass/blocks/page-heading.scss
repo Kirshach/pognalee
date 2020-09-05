@@ -1,0 +1,19 @@
+.page-heading {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 111%;
+
+  color: var(--ternary-color);
+}
+
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+  .page-heading {
+    font-size: 3.75rem;
+    line-height: 117%;
+  }
+}

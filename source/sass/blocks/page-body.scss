@@ -1,13 +1,12 @@
 .page-body {
   min-width: 320px;
+  max-width: 2200px;
   padding: 0;
-  padding-top: var(--header-top-height);
   margin: 0;
   font-family: $font-stack;
   font-size: 16px;
 
   background-color: var(--ternary-color);
-  background-color: var(--main-color);
 
   *, *::before, *::after {
     box-sizing: border-box;
@@ -20,11 +19,5 @@
 
   a:visited {
     color: inherit;
-  }
-}
-
-@media (min-width: $desktop-width) {
-  .page-body {
-    padding-top: 28px + 90px;
   }
 }

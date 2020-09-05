@@ -12,7 +12,7 @@ $menu-toggler-width: 35px;
 
 .page-header__top-container {
   position: fixed;
-  z-index: 3;
+  z-index: 101;
   top: 0;
   left: 0;
 
@@ -156,6 +156,10 @@ $menu-toggler-width: 35px;
   padding: calc(48.5px + var(--header-top-height)) var(--page-padding) 25px;
 
   background-color: var(--ternary-color);
+
+  .contact-methods__mini-icon {
+    display: none;
+  }
 }
 
 .page-header__bottom-container--has-js {
@@ -163,7 +167,7 @@ $menu-toggler-width: 35px;
   top: 0;
   left: 0;
 
-  z-index: 2;
+  z-index: 100;
 
   width: 100vw;
   min-width: $mobile-width;
@@ -192,9 +196,6 @@ $menu-toggler-width: 35px;
 }
 
 .page-header__authorize-button {
-  // display: inline-flex;
-  // align-items: center;
-  // justify-content: center;
   width: $mobile-width - 50px;
   margin: 0 auto 35.5px;
 }
@@ -204,10 +205,6 @@ $menu-toggler-width: 35px;
   flex-direction: column;
 
   color: var(--main-color--lighter);
-}
-
-.contact-methods__mini-icon {
-  display: none;
 }
 
 .page-header__socials {
@@ -422,7 +419,7 @@ $menu-toggler-width: 35px;
 @media (min-width: $desktop-width) {
 
   $header-transition-in: background-color 0.2s ease-out, color 0.2s ease-out;
-  $header-transition-out: background-color 0.12s ease-in, color 0.12s ease-in;
+  $header-transition-out: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
 
   .page-header {
@@ -433,6 +430,7 @@ $menu-toggler-width: 35px;
     position: fixed;
     top: 28px;
     left: 0;
+    z-index: 100;
 
     width: 100vw;
 
@@ -471,6 +469,24 @@ $menu-toggler-width: 35px;
     &::before {
       background-color: var(--ternary-color);
       transition: $header-transition-out;
+    }
+  }
+
+  .page-header__main-nav {
+    position: relative;
+    top: 3px;
+
+    margin-bottom: 0;
+
+    color: var(--main-color--lighter);
+    transition: $header-transition-in;
+
+    .main-nav__item {
+      margin-right: 34px;
+    }
+
+    .main-nav__item:last-of-type {
+      margin-right: 0;
     }
   }
 
@@ -555,25 +571,6 @@ $menu-toggler-width: 35px;
 
   .page-header__menu-toggler {
     display: none;
-  }
-
-  .page-header__main-nav {
-    position: relative;
-    top: 3px;
-
-    margin-bottom: 0;
-
-    color: var(--main-color--lighter);
-    transition: $header-transition-out;
-
-    .main-nav__item {
-      margin-right: 34px;
-    }
-
-    .main-nav__item:last-of-type {
-      margin-right: 0;
-    }
-
   }
 
   .page-header__user-container {
