@@ -2,8 +2,7 @@ $promo-bg-height: 478px;
 
 .promo {
   position: relative;
-  padding: 0;
-  padding-top: calc(#{$promo-bg-height} + 3rem);
+  padding: calc(#{$promo-bg-height} + 3rem) 0 39px;
   margin: 0;
 
   background-color: var(--main-color);
@@ -19,6 +18,10 @@ $promo-bg-height: 478px;
 
   background: url("../img/globe-back-mobile@1x.jpg") no-repeat bottom 0 left -3px;
   background-size: 350px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/globe-back-mobile@2x.jpg");
+  }
 }
 
 .promo__bg-img {
@@ -76,6 +79,7 @@ $promo-bg-height: 478px;
 }
 
 .promo__epigraph {
+  z-index: 1;
   display: grid;
 
   max-width: 170px;
@@ -126,7 +130,6 @@ $promo-bg-height: 478px;
 //
 
 .promo__what-to-do {
-  padding-bottom: 39px;
   background: linear-gradient(to bottom, transparent calc((100% - 39px) / 4), var(--main-color--lighter) calc((100% - 39px) / 4));
 }
 
@@ -190,113 +193,241 @@ $promo-bg-height: 478px;
   background-color: var(--accent-color);
 }
 
+
 ///////////////////////////////////
 //     Раскладка на планшете     //
 ///////////////////////////////////
 
 @media (min-width: $tablet-width) {
-  // $promo-bg-height: 478px;
+  $promo-bg-height: 994px;
 
   .promo {
-    // position: relative;
-    // padding: 0;
-    // padding-top: calc(#{$promo-bg-height} + 3rem);
-    // margin: 0;
+    padding-top: 162px;
+    padding-bottom: 96px;
 
     background-color: var(--main-color--tablet);
   }
 
-  // .promo__bg {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
+  .promo__bg {
+    height: $promo-bg-height;
 
-  //   width: 100%;
-  //   height: $promo-bg-height;
+    background: url("../img/globe-back-tablet@1x.jpg") no-repeat bottom 0 left -358px;
+    background-size: 1479px;
 
-  //   background: url("../img/globe-back-mobile@1x.jpg") no-repeat bottom 0 left -3px;
-  //   background-size: 350px;
-  // }
-
-  // .promo__bg-img {
-  //   position: absolute;
-  //   top: 222px;
-  //   right: 48px;
-  // }
-
-  .promo__page-heading {
-    top: calc(var(--header-top-height) + 30px);
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/globe-back-tablet@2x.jpg");
+    }
   }
 
-  // .promo__contact-methods-mini {
-  //   $promo-contacts-height: 40px;
+  .promo__bg-img {
+    top: 404px;
+    right: 111px;
+  }
 
-  //   position: absolute;
-  //   top: $promo-bg-height - $promo-contacts-height / 2;
-  //   right: var(--page-padding);
-  //   z-index: 2;
+  .promo__page-heading {
+    position: static;
+    margin-bottom: 1.43em;
+    transform: none;
+  }
 
-  //   display: flex;
+  .promo__contact-methods-mini {
+    display: none;
+  }
 
-  //   height: 40px;
-  //   min-width: 270px;
-  //   width: calc(100% - var(--page-padding) * 2);
+  .promo__epigraph {
+    position: relative;
+    grid-template-columns: 1fr;
 
-  //   .contact-methods-mini__link {
-  //     display: block;
-  //     width: 40px;
-  //     height: 40px;
-  //   }
+    max-width: 270px;
+    margin: 0 var(--page-padding) 211px calc(var(--page-padding) + 33px);
+  }
 
-  //   .contact-methods__svg {
-  //     transform: scale(0.8);
-  //   }
-  // }
+  .promo__quote {
+    margin-bottom: 1.6em;
 
-  // .promo__authorize-button {
-  //   flex-grow: 1;
+    font-size: 1.75rem;
+    line-height: 118%;
+  }
 
-  //   max-width: 225px;
-  //   margin-left: auto;
+  .promo__quote-footer {
+    font-size: 1.3125rem;
+    line-height: 119%;
+    text-align: left;
 
-  //   font-size: 1.0625rem
-  // }
+    &--w-i-d-e {
+      letter-spacing: 0.017em;
+    }
+  }
 
-  // .promo__epigraph {
-  //   display: grid;
+  //
+  //  Список "что делать?"
+  //
 
-  //   max-width: 170px;
-  //   padding: 0;
-  //   margin: 0 var(--page-padding) 1.8em calc(var(--page-padding) + 25px);
-  //   color: white;
-  // }
+  .promo__what-to-do {
+    background: var(--main-color--lighter);
+  }
 
-  // .promo__quote {
-  //   padding: 0;
-  //   margin: 0;
-  //   margin-bottom: 1.1em;
+  .what-to-do__list {
+    grid-template-columns: [grid-start] 50% [overlap-start] 20px [overlap-end] calc(50% - 20px) [grid-end];
 
-  //   font-size: 1rem;
-  //   font-weight: 300;
-  //   line-height: 137%;
-  // }
+    font-size: 1.5rem;
+    line-height: 100%;
+  }
 
-  // .promo__quote-footer {
-  //   font-weight: 700;
-  //   font-size: 1rem;
-  //   line-height: 137%;
+  .what-to-do__item {
+    min-height: 140px;
+    margin: 0;
 
-  //   &--w-i-d-e {
-  //     letter-spacing: 0.03em;
-  //   }
-  // }
+    border-radius: initial;
+
+    font-size: 1.5rem;
+    line-height: 100%;
+
+    &::after {
+      top: initial;
+      left: initial;
+
+      bottom: 0.85em;
+      left: 1.15em;
+
+      font-size: 1.825rem;
+    }
+  }
+
+  .what-to-do__item:nth-of-type(1) {
+    grid-column: grid-start / overlap-end;
+    grid-row: 1 / 2;
+    border-radius: 20px 0 0 0;
+  }
+
+  .what-to-do__item:nth-of-type(2) {
+    grid-column: overlap-start / grid-end;
+    grid-row: 1 / 2;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .what-to-do__item:nth-of-type(3) {
+    grid-column: grid-start / overlap-end;
+    grid-row: 2 / 3;
+    border-radius: 0 0 0 20px;
+  }
+
+  .what-to-do__item:nth-of-type(4) {
+    grid-column: overlap-start / grid-end;
+    grid-row: 2 / 3;
+    border-radius: 0 0 20px 20px;
+  }
 }
 
 
-  ///////////////////////////////////
+///////////////////////////////////
 //     Раскладка на десктопе     //
 ///////////////////////////////////
 
 @media (min-width: $desktop-width) {
+  $promo-bg-height: 750px;
 
+  .promo {
+    min-height: $promo-bg-height;
+    padding: 209px var(--page-padding) 0;
+
+    background-color: var(--main-color--desktop);
+  }
+
+  .promo__bg {
+    height: $promo-bg-height;
+
+    background: url("../img/globe-back-desktop@1x.jpg") no-repeat bottom 0 left -180px;
+    background-size: 1800px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/globe-back-desktop@2x.jpg");
+    }
+  }
+
+  .promo__bg-img {
+    top: 110px;
+    right: calc(50% - 315px);
+  }
+
+  .promo__page-heading {
+    float: left;
+
+    position: relative;
+    top: initial;
+    left: initial;
+    z-index: 1;
+
+    width: auto;
+    margin: 0 0 100px 5%;
+
+    text-align: left;
+  }
+
+  .promo__epigraph {
+    float: right;
+
+    position: relative;
+    top: initial;
+    z-index: 1;
+
+    margin: 10px 18px 100px 0;
+  }
+
+  //
+  //  Список "что делать?"
+  //
+
+  .promo__what-to-do {
+    clear: both;
+    background: transparent;
+  }
+
+  .what-to-do__list {
+    display: flex;
+
+    width: 100%;
+    margin: 0;
+  }
+
+  .what-to-do__item {
+    min-height: 107px;
+    padding: 1.25em 1.33em 1.2em;
+
+    &::after {
+      bottom: initial;
+      left: initial;
+      top: 1.25em;
+      right: 73px;
+
+      font-size: 1.5rem;
+    }
+  }
+
+  .what-to-do__item:nth-of-type(n) {
+    border-radius: 20px;
+    margin-right: -40px;
+  }
+
+  .what-to-do__item:nth-of-type(1) {
+    flex-grow: 1.65;
+  }
+
+  .what-to-do__item:nth-of-type(2) {
+    flex-grow: 1.35;
+  }
+
+  .what-to-do__item:nth-of-type(3) {
+    flex-grow: 1.5;
+  }
+
+  .what-to-do__item:nth-of-type(4) {
+    flex-grow: 1;
+    margin-right: 0;
+
+    &::after {
+      right: 33px;
+    }
+  }
 }
+
