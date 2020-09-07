@@ -1,0 +1,107 @@
+.about-service {
+  position: relative;
+
+  min-height: 352px;
+  padding: 2.05em var(--page-padding--wider) 63px;
+  margin: 0;
+
+  border-radius: 0 0 30px 30px;
+  background-color: var(--main-color--lighter);
+}
+
+.about-service__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    height: 132px;
+
+    border-radius: 20px;
+    background-color: var(--main-color);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+
+    width: calc(100% - 207px);
+  }
+
+  &::after {
+    bottom: 24px;
+    right: 190px;
+
+    width: calc(50% - 80px);
+
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+}
+
+.about-service__bg-img {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+  width: 292px;
+  height: 352px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.about-service__heading {
+  position: relative;
+  z-index: 1;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.78em;
+}
+
+.about-service__paragraph {
+  position: relative;
+  z-index: 1;
+
+  max-width: 250px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.2em;
+
+  font-weight: 300;
+  line-height: 137%;
+  color: var(--ternary-color);
+}
+
+.about-service__paragraph--bolder {
+  font-weight: 700;
+}
+
+.about-service__button {
+  display: none;
+}
+
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+
+}
+
+
+///////////////////////////////////
+//     Раскладка на десктопе     //
+///////////////////////////////////
+
+@media (min-width: $desktop-width) {
+
+}

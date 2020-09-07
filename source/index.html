@@ -20,7 +20,7 @@
           background-image: url( "pixel-glass/tablet-index.png" );
         }
       }
-      @media ( min-width: 1440px ) {
+      @media ( min-width: 1200px ) {
         HTML {
           background-image: url( "pixel-glass/desktop-index.png" );
         }
@@ -165,15 +165,23 @@
         </section>
       </section>
       <section class="about-service">
+        <div class="about-service__bg">
+          <picture>
+            <source type="image/webp" media="(min-width: 1200px)" srcset="img/about-desktop@1x.webp 1x, img/about-desktop@2x.webp 2x">
+            <source media="(min-width: 1200px)" srcset="img/about-desktop@1x.png 1x, img/about-desktop@2x.png 2x">
+            <source type="image/webp" media="(min-width: 600px)" srcset="img/about-tablet@1x.webp 1x, img/about-tablet@2x.webp 2x">
+            <source media="(min-width: 600px)" srcset="img/about-tablet@1x.png 1x, img/about-tablet@2x.png 2x">
+            <source type="image/webp" srcset="img/about-mobile@1x.webp 1x, img/about-mobile@2x.webp 2x">
+            <img class="about-service__bg-img" src="img/about-mobile@1x.png" srcset="img/about-mobile@2x.png 2x" alt="3D-представление слоёв из карточек пользователей">
+          </picture>
+        </div>
         <h2 class="about-service__heading section-heading">О сервисе</h2>
         <p class="about-service__paragraph">
-          Любое путешествие веселее с попутчиками, которые на одной волне с тобой!
-          Делитесь своими идеями путешествий и черпайте вдохновение в чужих.
+          Любое путешествие веселее <span class="no-wrap">с попутчиками</span>, которые на одной волне <span class="no-wrap">с тобой!</span>
+          Делитесь своими идеями путешествий и черпайте вдохновение <span class="no-wrap">в чужих</span>.
         </p>
-        <p class="about-service__paragraph about-service__paragraph--bold">
-          А если найдете кого-то
-          близкого по духу — скорее
-          зовите в совместный трип!
+        <p class="about-service__paragraph about-service__paragraph--bolder">
+          А если найдете кого-то <span class="no-wrap">близкого по духу —</span> скорее зовите в <span class="no-wrap">совместный трип</span>!
         </p>
         <a class="about-service__button button" href="">Подробнее</a>
       </section>

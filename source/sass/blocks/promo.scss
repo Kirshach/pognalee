@@ -2,7 +2,8 @@ $promo-bg-height: 478px;
 
 .promo {
   position: relative;
-  padding: calc(#{$promo-bg-height} + 3rem) 0 39px;
+  padding: 0;
+  padding-top: calc(#{$promo-bg-height} + 3rem);
   margin: 0;
 
   background-color: var(--main-color);
@@ -84,7 +85,7 @@ $promo-bg-height: 478px;
 
   max-width: 170px;
   padding: 0;
-  margin: 0 var(--page-padding) 1.8em calc(var(--page-padding) + 25px);
+  margin: 0 var(--page-padding) 1.8em var(--page-padding--wider);
   color: white;
 }
 
@@ -130,6 +131,7 @@ $promo-bg-height: 478px;
 //
 
 .promo__what-to-do {
+  padding-bottom: 39px;
   background: linear-gradient(to bottom, transparent calc((100% - 39px) / 4), var(--main-color--lighter) calc((100% - 39px) / 4));
 }
 
@@ -146,10 +148,6 @@ $promo-bg-height: 478px;
   line-height: 100%;
 
   list-style: none;
-
-  @media (min-width: $mobile-width + 200px) {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .what-to-do__item {
