@@ -17,11 +17,11 @@ $promo-bg-height: 478px;
   width: 100%;
   height: $promo-bg-height;
 
-  background: url("../img/globe-back-mobile@1x.jpg") no-repeat bottom 0 left -3px;
+  background: url('../img/globe-back-mobile@1x.jpg') no-repeat bottom 0 left -3px;
   background-size: 350px;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/globe-back-mobile@2x.jpg");
+    background-image: url('../img/globe-back-mobile@2x.jpg');
   }
 }
 
@@ -201,7 +201,6 @@ $promo-bg-height: 478px;
 
   .promo {
     padding-top: 162px;
-    padding-bottom: 96px;
 
     background-color: var(--main-color--tablet);
   }
@@ -209,11 +208,11 @@ $promo-bg-height: 478px;
   .promo__bg {
     height: $promo-bg-height;
 
-    background: url("../img/globe-back-tablet@1x.jpg") no-repeat bottom 0 left -358px;
+    background: url('../img/globe-back-tablet@1x.jpg') no-repeat bottom 0 left -358px;
     background-size: 1479px;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/globe-back-tablet@2x.jpg");
+      background-image: url('../img/globe-back-tablet@2x.jpg');
     }
   }
 
@@ -262,6 +261,8 @@ $promo-bg-height: 478px;
   //
 
   .promo__what-to-do {
+    padding-bottom: 95px;
+
     background: var(--main-color--lighter);
   }
 
@@ -322,7 +323,7 @@ $promo-bg-height: 478px;
 //     Раскладка на десктопе     //
 ///////////////////////////////////
 
-@media (min-width: $desktop-width) {
+@media (min-width: $desktop-width + 60px) {
   $promo-bg-height: 750px;
 
   .promo {
@@ -335,17 +336,17 @@ $promo-bg-height: 478px;
   .promo__bg {
     height: $promo-bg-height;
 
-    background: url("../img/globe-back-desktop@1x.jpg") no-repeat bottom 0 left -180px;
+    background: url('../img/globe-back-desktop@1x.jpg') no-repeat bottom 0 left -180px;
     background-size: 1800px;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/globe-back-desktop@2x.jpg");
+      background-image: url('../img/globe-back-desktop@2x.jpg');
     }
   }
 
   .promo__bg-img {
     top: 110px;
-    right: calc(50% - 315px);
+    right: calc(20% + 117px);
   }
 
   .promo__page-heading {

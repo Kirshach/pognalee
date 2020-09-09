@@ -63,7 +63,7 @@ $menu-toggler-width: 35px;
 
   // Изображение в пседоэлементе задаёт внешний вид логотипа в альтернативном состоянии
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -370,7 +370,7 @@ $menu-toggler-width: 35px;
     padding: calc(30px + var(--header-top-height)) calc(var(--page-padding) + 57px) 32px;
 
     &::before {
-      content: "";
+      content: '';
       position: fixed;
       top: 0;
       left: 0;
@@ -455,7 +455,7 @@ $menu-toggler-width: 35px;
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: calc(var(--page-padding) + 240px);

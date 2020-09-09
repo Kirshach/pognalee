@@ -18,20 +18,20 @@
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
 
     height: 132px;
 
     border-radius: 20px;
-    background-color: var(--main-color);
+    background-color: var(--main-color--darker3);
   }
 
   &::before {
     top: 0;
-    left: 0;
+    left: -20px;
 
-    width: calc(100% - 207px);
+    width: calc(100% - 187px);
   }
 
   &::after {
@@ -94,7 +94,58 @@
 ///////////////////////////////////
 
 @media (min-width: $tablet-width) {
+  .about-service {
+    min-height: 670px;
+    padding: 2.4em var(--page-padding--wider) 90px;
 
+    border-radius: 0 0 60px 60px;
+  }
+
+  .about-service__bg {
+    &::before {
+      left: var(--page-padding);
+
+      width: calc(100% - var(--page-padding) * 2);
+      height: 212px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .about-service__bg-img {
+    position: absolute;
+    top: 49px;
+    right: calc(20% - 157px);
+
+    width: 376px;
+    height: 548px;
+  }
+
+  .about-service__paragraph {
+    width: calc(100% - 300px);
+    max-width: 500px;
+
+    font-size: 1.75rem;
+    line-height: 118%;
+  }
+
+  .about-service__paragraph--bolder {
+    width: calc(100% - 340px);
+    max-width: 350px;
+    margin-bottom: 2.4em;
+
+    font-size: 1.3125rem;
+    line-height: 119%;
+  }
+
+  .about-service__button {
+    display: block;
+
+    width: calc(100% - 344px);
+    max-width: 330px;
+  }
 }
 
 
@@ -103,5 +154,48 @@
 ///////////////////////////////////
 
 @media (min-width: $desktop-width) {
+  .about-service {
+    min-height: 750px;
+    padding: 8em var(--page-padding--wider) 160px;
 
+    border-radius: 0 0 55px 55px;
+  }
+
+  .about-service__heading {
+    margin-bottom: 1.22em;
+  }
+
+  .about-service__bg {
+    &::before {
+      top: 70px;
+
+      width: 212px;
+      height: 212px;
+    }
+  }
+
+  .about-service__bg-img {
+    top: 85px;
+    right: calc(var(--page-padding--wider) - 80px);
+
+    width: 630px;
+    height: 665px;
+  }
+
+  .about-service__paragraph {
+    width: 53%;
+    margin-bottom: 1.4em;
+
+    max-width: 800px;
+  }
+
+  .about-service__paragraph--bolder {
+    width: 40%;
+    max-width: 450px;
+    margin-bottom: 4em;
+  }
+
+  .about-service__button {
+    width: 274px;
+  }
 }

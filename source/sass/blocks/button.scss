@@ -1,8 +1,33 @@
 .button {
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+
+  border-radius: 20px;
+  background-color: var(--accent-color);
+}
+
+.button--square {
   display: inline-flex;
 
-  background-color: var(--accent-color);
   color: var(--main-color--lighter2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 38px;
+    top: calc(50% - 6px);
+
+    width: 12px;
+    height: 12px;
+
+    background-color: var(--main-color--lighter2);
+    transform: rotate(135deg);
+    clip-path: polygon(0% 0%, 100% 25%, 25% 100%);
+  }
 }
 
 .button--round {
@@ -43,5 +68,12 @@
 ///////////////////////////////////
 
 @media (min-width: $tablet-width ) {
+  .button--square {
 
+    height: 80px;
+    padding: 1.2em 1.37em 1.15em;
+
+    font-size: 1.5rem;
+    line-height: 100%;
+  }
 }

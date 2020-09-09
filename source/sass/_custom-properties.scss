@@ -7,7 +7,8 @@
   --main-color--lighter: #192144;
   --main-color--lighter2: #1d2e5b;
   --main-color--darker: #121936;
-  --main-color-darker2: #132576;
+  --main-color--darker2: #132576;
+  --main-color--darker3: #141b3b;
   --secondary-color: #e6e8f1;
   --secondary-color--lighter: #edeff6;
   --secondary-color--darker: #cccccc;
@@ -22,14 +23,16 @@
 
   // Паддинги страниц
   --page-padding: calc(10% - 7px);
-  --page-padding--wider: calc(var(--page-padding) + 24px);
+  --page-padding--wider: calc(10% + 17px);
 
   @media (min-width: $tablet-width) {
     --page-padding: max(calc(10% - 37px), 33px);
+    --page-padding--wider: calc(20% - 80px);
   }
 
   @media (min-width: $desktop-width) {
     --page-padding: calc(10% - 84px);
+    --page-padding--wider: calc(30% - 302px);
   }
 
   // Высота шапки страницы
