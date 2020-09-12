@@ -1,6 +1,7 @@
 $menu-toggler-width: 35px;
 
 .page-header {
+  max-width: 2200px;
   overflow: hidden;
 }
 
@@ -35,8 +36,8 @@ $menu-toggler-width: 35px;
   transition: background-color 0.2s ease-in-out;
   // Изображение в пседоэлементе задаёт внешний вид логотипа в альтернативном состоянии
   .page-header__site-logo-link::after {
-      opacity: 1;
-      transition: opacity 0.2s ease-out;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
   }
   .page-header__menu-toggler rect {
     fill: var(--ternary-color);
@@ -63,7 +64,7 @@ $menu-toggler-width: 35px;
 
   // Изображение в пседоэлементе задаёт внешний вид логотипа в альтернативном состоянии
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -71,11 +72,11 @@ $menu-toggler-width: 35px;
     opacity: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/logo-mobile-white@1x.png');
+    background: url("../img/logo-mobile-white@1x.png");
     background-size: 100%;
 
     @media (min-resolution: 2dppx) {
-      background: url('../img/logo-mobile-white@2x.png') no-repeat;
+      background: url("../img/logo-mobile-white@2x.png") no-repeat;
       background-size: 100%;
     }
 
@@ -152,7 +153,7 @@ $menu-toggler-width: 35px;
   align-items: center;
 
   // Не дадим растянуться блоку в случае аномально диспропорционального экрана
-  height: unquote('max(100vh, 570px)');
+  height: unquote("max(100vh, 570px)");
   max-height: 900px;
   padding: calc(48.5px + var(--header-top-height)) var(--page-padding) 25px;
 
@@ -198,6 +199,7 @@ $menu-toggler-width: 35px;
 
 .page-header__authorize-button {
   width: $mobile-width - 50px;
+  padding: 1em 1.5em 0.75em;
   margin: 0 auto 35.5px;
 }
 
@@ -239,27 +241,24 @@ $menu-toggler-width: 35px;
 }
 
 @media (max-width: 1199px) {
-.page-header__contact-methods .contact-methods__link {
+  .page-header__contact-methods .contact-methods__link {
     background: transparent;
     border-radius: 0;
   }
 }
-
 
 ///////////////////////////////////
 //     Раскладка на планшете     //
 ///////////////////////////////////
 
 @media (min-width: $tablet-width) and (min-height: $tablet-width) {
-
   $tablet-top-padding: 41px;
 
   .page-header--has-js {
     .page-header__top-container {
-      background: transparent
+      background: transparent;
     }
   }
-
 
   //////////
   // Верхняя часть
@@ -302,12 +301,12 @@ $menu-toggler-width: 35px;
     transform: none;
 
     &::after {
-      background: url('../img/logo-tablet-white@1x.png');
+      background: url("../img/logo-tablet-white@1x.png");
       background-position: 0 0;
       background-size: 164px 40px;
 
       @media (min-resolution: 2dppx) {
-        background: url('../img/logo-tablet-white@2x.png') no-repeat;
+        background: url("../img/logo-tablet-white@2x.png") no-repeat;
         background-position: 0 0;
         background-size: 164px 40px;
       }
@@ -365,12 +364,13 @@ $menu-toggler-width: 35px;
     justify-content: space-between;
     align-items: start;
 
-    height: unquote('max(100vh, 630px)');
+    height: unquote("max(100vh, 630px)");
     max-height: 1600px;
-    padding: calc(30px + var(--header-top-height)) calc(var(--page-padding) + 57px) 32px;
+    padding: calc(30px + var(--header-top-height))
+      calc(var(--page-padding) + 57px) 32px;
 
     &::before {
-      content: '';
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
@@ -388,7 +388,6 @@ $menu-toggler-width: 35px;
       transition: background-color 0.12s ease-in;
     }
   }
-
 
   .page-header__main-nav {
     margin-bottom: 25px;
@@ -414,8 +413,9 @@ $menu-toggler-width: 35px;
 
   @media (min-width: $tablet-width + 168px) and (min-height: $tablet-width + 168px) {
     .page-header__bottom-container {
-      height: unquote('max(100vh, px)');
-      padding: calc(61px + var(--header-top-height)) calc(var(--page-padding) + 57px) 72px;
+      height: unquote("max(100vh, px)");
+      padding: calc(61px + var(--header-top-height))
+        calc(var(--page-padding) + 57px) 72px;
     }
 
     .page-header__main-nav {
@@ -429,9 +429,9 @@ $menu-toggler-width: 35px;
 ///////////////////////////////////
 
 @media (min-width: $desktop-width) {
-
   $header-transition-in: background-color 0.2s ease-out, color 0.2s ease-out;
-  $header-transition-out: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  $header-transition-out: background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
 
   .page-header {
     display: flex;
@@ -455,7 +455,7 @@ $menu-toggler-width: 35px;
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: calc(var(--page-padding) + 240px);
@@ -516,11 +516,11 @@ $menu-toggler-width: 35px;
     transform: none;
 
     &::after {
-      background: url('../img/logo-tablet-white@1x.png') no-repeat;
+      background: url("../img/logo-tablet-white@1x.png") no-repeat;
       background-size: 200px 52px;
 
       @media (min-resolution: 2dppx) {
-        background: url('../img/logo-tablet-white@2x.png') no-repeat;
+        background: url("../img/logo-tablet-white@2x.png") no-repeat;
         background-size: 200px 52px;
       }
     }
@@ -600,7 +600,7 @@ $menu-toggler-width: 35px;
     }
 
     .contact-methods__span,
-    .contact-methods__icon  {
+    .contact-methods__icon {
       display: none;
     }
 

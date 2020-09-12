@@ -2,6 +2,8 @@ $promo-bg-height: 478px;
 
 .promo {
   position: relative;
+  z-index: 10;
+
   padding: 0;
   padding-top: calc(#{$promo-bg-height} + 3rem);
   margin: 0;
@@ -17,11 +19,11 @@ $promo-bg-height: 478px;
   width: 100%;
   height: $promo-bg-height;
 
-  background: url('../img/globe-back-mobile@1x.jpg') no-repeat bottom 0 left -3px;
+  background: url("../img/globe-back-mobile@1x.jpg") no-repeat bottom 0 left -3px;
   background-size: 350px;
 
   @media (min-resolution: 2dppx) {
-    background-image: url('../img/globe-back-mobile@2x.jpg');
+    background-image: url("../img/globe-back-mobile@2x.jpg");
   }
 }
 
@@ -37,7 +39,8 @@ $promo-bg-height: 478px;
   left: 50%;
   z-index: 2;
 
-  width: 100%;
+  width: max-content;
+  max-width: 83%;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -76,7 +79,7 @@ $promo-bg-height: 478px;
   max-width: 225px;
   margin-left: auto;
 
-  font-size: 1.0625rem
+  font-size: 1.0625rem;
 }
 
 .promo__epigraph {
@@ -132,7 +135,11 @@ $promo-bg-height: 478px;
 
 .promo__what-to-do {
   padding-bottom: 39px;
-  background: linear-gradient(to bottom, transparent calc((100% - 39px) / 4), var(--main-color--lighter) calc((100% - 39px) / 4));
+  background: linear-gradient(
+    to bottom,
+    transparent calc((100% - 39px) / 4),
+    var(--main-color--lighter) calc((100% - 39px) / 4)
+  );
 }
 
 .what-to-do__list {
@@ -160,6 +167,8 @@ $promo-bg-height: 478px;
   margin: -20px 0 0;
 
   border-radius: 10px;
+
+  color: var(--main-color--desktop);
 
   &::after {
     content: counter(what-to-do-items);
@@ -191,7 +200,6 @@ $promo-bg-height: 478px;
   background-color: var(--accent-color);
 }
 
-
 ///////////////////////////////////
 //     Раскладка на планшете     //
 ///////////////////////////////////
@@ -201,6 +209,7 @@ $promo-bg-height: 478px;
 
   .promo {
     padding-top: 162px;
+    padding-bottom: 57px;
 
     background-color: var(--main-color--tablet);
   }
@@ -208,11 +217,11 @@ $promo-bg-height: 478px;
   .promo__bg {
     height: $promo-bg-height;
 
-    background: url('../img/globe-back-tablet@1x.jpg') no-repeat bottom 0 left -358px;
+    background: url("../img/globe-back-tablet@1x.jpg") no-repeat bottom 0 left -358px;
     background-size: 1479px;
 
     @media (min-resolution: 2dppx) {
-      background-image: url('../img/globe-back-tablet@2x.jpg');
+      background-image: url("../img/globe-back-tablet@2x.jpg");
     }
   }
 
@@ -223,7 +232,7 @@ $promo-bg-height: 478px;
 
   .promo__page-heading {
     position: static;
-    margin-bottom: 1.43em;
+    margin: 0 auto 1.43em;
     transform: none;
   }
 
@@ -261,13 +270,13 @@ $promo-bg-height: 478px;
   //
 
   .promo__what-to-do {
-    padding-bottom: 95px;
-
     background: var(--main-color--lighter);
   }
 
   .what-to-do__list {
-    grid-template-columns: [grid-start] 50% [overlap-start] 20px [overlap-end] calc(50% - 20px) [grid-end];
+    grid-template-columns:
+      [grid-start] 50% [overlap-start] 20px [overlap-end] calc(50% - 20px)
+      [grid-end];
 
     font-size: 1.5rem;
     line-height: 100%;
@@ -318,7 +327,6 @@ $promo-bg-height: 478px;
   }
 }
 
-
 ///////////////////////////////////
 //     Раскладка на десктопе     //
 ///////////////////////////////////
@@ -336,11 +344,11 @@ $promo-bg-height: 478px;
   .promo__bg {
     height: $promo-bg-height;
 
-    background: url('../img/globe-back-desktop@1x.jpg') no-repeat bottom 0 left -180px;
+    background: url("../img/globe-back-desktop@1x.jpg") no-repeat bottom 0 left -180px;
     background-size: 1800px;
 
     @media (min-resolution: 2dppx) {
-      background-image: url('../img/globe-back-desktop@2x.jpg');
+      background-image: url("../img/globe-back-desktop@2x.jpg");
     }
   }
 
@@ -358,6 +366,7 @@ $promo-bg-height: 478px;
     z-index: 1;
 
     width: auto;
+    max-width: 35%;
     margin: 0 0 100px 5%;
 
     text-align: left;
@@ -429,4 +438,3 @@ $promo-bg-height: 478px;
     }
   }
 }
-

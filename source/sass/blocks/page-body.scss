@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -11,6 +13,7 @@ a {
   position: relative;
 
   min-width: 320px;
+  max-width: 2200px;
   padding: 0;
   margin: 0;
   font-family: $font-stack;

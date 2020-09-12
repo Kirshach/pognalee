@@ -1,11 +1,12 @@
 .about-service {
   position: relative;
+  z-index: 9;
 
   min-height: 352px;
   padding: 2.05em var(--page-padding--wider) 63px;
   margin: 0;
 
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 var(--section-br) var(--section-br);
   background-color: var(--main-color--lighter);
 }
 
@@ -18,7 +19,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
 
     height: 132px;
@@ -88,7 +89,6 @@
   display: none;
 }
 
-
 ///////////////////////////////////
 //     Раскладка на планшете     //
 ///////////////////////////////////
@@ -97,8 +97,6 @@
   .about-service {
     min-height: 670px;
     padding: 2.4em var(--page-padding--wider) 90px;
-
-    border-radius: 0 0 60px 60px;
   }
 
   .about-service__bg {
@@ -148,7 +146,6 @@
   }
 }
 
-
 ///////////////////////////////////
 //     Раскладка на десктопе     //
 ///////////////////////////////////
@@ -157,8 +154,6 @@
   .about-service {
     min-height: 750px;
     padding: 8em var(--page-padding--wider) 160px;
-
-    border-radius: 0 0 55px 55px;
   }
 
   .about-service__heading {
@@ -168,6 +163,7 @@
   .about-service__bg {
     &::before {
       top: 70px;
+      left: calc(20% - 228px);
 
       width: 212px;
       height: 212px;

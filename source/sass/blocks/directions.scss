@@ -1,0 +1,333 @@
+.directions {
+  position: relative;
+  z-index: 8;
+
+  padding: calc(4.45em + var(--section-br)) var(--page-padding) 34px;
+  margin: calc(-1 * var(--section-br)) 0 0;
+  border-radius: var(--section-br);
+
+  background-color: var(--secondary-color--lighter);
+}
+
+.directions__heading {
+  padding: 0;
+  margin: 0 calc(var(--page-padding--wider) - var(--page-padding)) 0.8em;
+}
+
+.directions__paragraph {
+  max-width: calc(70% + 10px);
+  padding: 0;
+  margin: 0 calc(var(--page-padding--wider) - var(--page-padding));
+  margin-bottom: 3.78em;
+
+  font-weight: 300;
+  line-height: 137%;
+
+  color: var(--text-main-color);
+}
+
+.directions__list {
+  max-width: 300px;
+  padding: 0;
+  margin: 0 auto 1.7em;
+
+  list-style: none;
+}
+
+.directions__item {
+  position: relative;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 11px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.directions__photo {
+  display: block;
+  width: 100%;
+}
+
+.directions__item-internal-container {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 65% 35%;
+
+  padding: 9% 9% 7.9%;
+  border-radius: 10px;
+  margin-top: -11px;
+
+  background-color: var(--ternary-color);
+}
+
+/////////////////////////////////////////////
+////     Временное правило, удалить       ///
+////////////////////////////////////////////
+
+.directions__item:last-of-type .directions__item-internal-container {
+  padding-bottom: 1%;
+}
+
+.directions__country-name {
+  font-size: 1.3125rem;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.1em;
+}
+
+.directions__country-slogan {
+  padding: 0;
+  margin: 0;
+
+  font-weight: 500;
+  opacity: 0.3;
+
+  color: var(--text-main-color);
+}
+
+.directions__country-users {
+  width: max-content;
+  padding: 0;
+  margin: 5px 0 0 auto;
+
+  font-weight: 500;
+  opacity: 0.3;
+
+  color: var(--text-main-color);
+}
+
+.directions__user-icon {
+  position: relative;
+  top: 1px;
+
+  padding: 0;
+  margin: 0;
+  opacity: 0.3;
+}
+
+.directions__flag {
+  position: absolute;
+  top: -13px;
+  left: 9%;
+}
+
+.directions__button {
+  width: 100%;
+  margin: 0 auto;
+
+  max-width: 300px;
+}
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+  .directions {
+    padding: calc(4.25em + var(--section-br)) var(--page-padding--wider) 80px;
+
+    background: var(--secondary-color--lighter) url("../img/flags-back@1x.png")
+      no-repeat;
+    background-position: calc(90% + 8px) calc(4.25em + 11px + var(--section-br));
+    background-size: 288px 574px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/flags-back@2x.png");
+    }
+  }
+
+  .directions__heading {
+    max-width: calc(100% - 270px);
+    margin: 0 0 1.2em;
+  }
+
+  .directions__paragraph {
+    max-width: calc(100% - 270px);
+    margin: 0;
+    margin-bottom: 3.7em;
+
+    font-size: 1.75rem;
+    line-height: 118%;
+  }
+
+  .directions__list {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 2.9em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -38px;
+      left: -36px;
+
+      width: 141px;
+      height: 141px;
+
+      border-radius: 20px;
+      background-color: var(--secondary-color--lighter2);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: linear-gradient(
+        to top,
+        var(--secondary-color--lighter),
+        var(--transparent) 110px
+      );
+    }
+  }
+
+  .directions__item {
+    display: flex;
+    flex-direction: row-reverse;
+
+    border-radius: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .directions__photo {
+    width: 185px;
+  }
+
+  .directions__item-internal-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    padding: 4.5% 5% 3.2%;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  /////////////////////////////////////////////
+  ////     Временное правило, удалить       ///
+  ////////////////////////////////////////////
+
+  .directions__item:last-of-type .directions__item-internal-container {
+    padding-bottom: 3%;
+  }
+
+  .directions__country-name {
+    font-size: 1.5rem;
+  }
+
+  .directions__country-slogan {
+    font-size: 1.25rem;
+    margin-bottom: auto;
+  }
+
+  .directions__country-users {
+    order: 1;
+    margin: 0;
+
+    font-size: 1.25rem;
+  }
+
+  .directions__user-icon {
+    top: 3px;
+    width: 19px;
+    height: 19px;
+    margin-right: 5px;
+  }
+
+  .directions__flag {
+    top: 17px;
+    left: unset;
+    right: -35px;
+
+    width: 73px;
+    height: 48px;
+  }
+
+  .directions__button {
+    max-width: unset;
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на десктопе     //
+///////////////////////////////////
+
+@media (min-width: $desktop-width) {
+  .directions {
+    display: grid;
+    grid-template-columns: 47.5% 38%;
+    grid-template-rows: 1fr 80px;
+    grid-column-gap: 14.5%;
+
+    padding: calc(161px + var(--section-br)) var(--page-padding--wider) 148px;
+
+    background-position: calc(90% + 55px) calc(87px + var(--section-br));
+  }
+
+  .directions__top {
+    grid-column: 2 / 3;
+  }
+
+  .directions__bottom {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .directions__paragraph {
+    max-width: 350px;
+    margin: 0;
+  }
+
+  .directions__list {
+    display: block;
+    margin: 0;
+
+    &::before {
+      top: -72px;
+      left: -70px;
+    }
+  }
+
+  .directions__item-internal-container {
+    // flex-grow: 1;
+    // display: flex;
+    // flex-direction: column;
+
+    padding: 4.1% 5.2% 3.6%;
+    // border-radius: 0;
+    // margin: 0;
+  }
+
+  .directions__country-name {
+    margin-bottom: 0.05em;
+  }
+
+  .directions__flag {
+    top: 23px;
+  }
+
+  .directions__button {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 275px;
+
+    margin: 0;
+    margin-top: 11px;
+  }
+}

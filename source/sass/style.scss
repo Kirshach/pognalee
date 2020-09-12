@@ -7,7 +7,6 @@
 @import "_custom-properties.scss";
 @import "_global-mixins.scss";
 
-
 ///////////////////////////////////
 //         Правила блоков        //
 ///////////////////////////////////
@@ -27,5 +26,6 @@
 
 // Локальные стили
 @import "blocks/about-service.scss";
+@import "blocks/directions.scss";
 @import "blocks/page-header.scss";
 @import "blocks/promo.scss";

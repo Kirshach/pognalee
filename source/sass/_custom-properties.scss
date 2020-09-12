@@ -11,8 +11,12 @@
   --main-color--darker3: #141b3b;
   --secondary-color: #e6e8f1;
   --secondary-color--lighter: #edeff6;
+  --secondary-color--lighter2: #e2e5f2;
   --secondary-color--darker: #cccccc;
   --ternary-color: #ffffff;
+  --text-main-color: #444444;
+  // прозрачный цвет, чтобы сафари справился с linear-gradient
+  --transparent: rgba(255, 255, 255, 0);
 
   --accent-color: #ffd74b;
   --accent-color2: #ffbd30;
@@ -20,8 +24,24 @@
   --accent-color4: #ff8d30;
   --accent-color5: #f26926;
 
+  //
+  // Высота шапки страницы
+  //
 
+  --header-top-height: 73px;
+
+  @media (min-width: $tablet-width) and (min-height: $tablet-width) {
+    --header-top-height: 132px;
+  }
+
+  @media (min-width: $desktop-width) {
+    --header-top-height: 90px;
+  }
+
+  //
   // Паддинги страниц
+  //
+
   --page-padding: calc(10% - 7px);
   --page-padding--wider: calc(10% + 17px);
 
@@ -35,14 +55,16 @@
     --page-padding--wider: calc(30% - 302px);
   }
 
-  // Высота шапки страницы
-  --header-top-height: 73px;
+  //
+  // Border-radius секций
+  //
+  --section-br: 30px;
 
-  @media (min-width: $tablet-width) and (min-height: $tablet-width) {
-    --header-top-height: 132px;
+  @media (min-width: $tablet-width) {
+    --section-br: 60px;
   }
 
   @media (min-width: $desktop-width) {
-    --header-top-height: 90px;
+    --section-br: 55px;
   }
 }
