@@ -179,11 +179,12 @@ $menu-toggler-width: 35px;
   height: calc((var(--vh, 1vh) * 100));
   overflow: scroll;
 
+  transform: translateX(0);
   transition: height 0.5s;
 }
 
 .page-header__bottom-container--closed {
-  left: 100vw;
+  transform: translateX(100vw);
 }
 
 .page-header__main-nav {
@@ -294,7 +295,7 @@ $menu-toggler-width: 35px;
   .page-header__top-container--modal-mode {
     .page-header__site-logo-link::after {
       opacity: 0;
-      transition: 0.15s ease-out 0.2s;
+      transition: opacity 0.15s ease-out 0.2s;
     }
   }
 

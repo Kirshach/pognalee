@@ -1,0 +1,130 @@
+.companions {
+  position: relative;
+  z-index: 7;
+
+  padding: calc(var(--section-br) + 4.25em) var(--page-padding);
+  margin: calc(-1 * var(--section-br)) 0 0;
+  background: url("../img/rogovaya-back-mobile@1x.jpg") no-repeat top 337px left
+      0/62px 71px,
+    var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg")
+      no-repeat top 65px right 14%/143px 143px;
+
+  @media (min-resolution: 2dppx) {
+    background: url("../img/rogovaya-back-mobile@2x.jpg") no-repeat top 337px
+        left 0/62px 71px,
+      var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg")
+        no-repeat top 65px right 14%/143px 143px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 64px;
+    left: -20px;
+
+    width: 132px;
+    height: 132px;
+    background-color: var(--main-color--darker3);
+    border-radius: 20px;
+  }
+}
+
+.companions__heading {
+  padding: 0;
+  margin: 0 calc(var(--page-padding--wider) - var(--page-padding)) 0.785em;
+}
+
+.companions__paragraph {
+  max-width: 80%;
+  margin: 0 calc(var(--page-padding--wider) - var(--page-padding)) 1.33em;
+
+  font-weight: 300;
+  line-height: 137%;
+
+  color: var(--ternary-color);
+
+  &--bold {
+    font-weight: 700;
+    margin-bottom: 3.4em;
+  }
+}
+
+.companions__list {
+  padding: 0;
+  margin: 0 auto;
+
+  list-style: none;
+}
+
+.companions__item {
+  padding: 0;
+}
+
+//////////////
+//  Карточка пользователя
+/////////////
+
+.companions__user-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 270px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  transition: box-shadow 0.2s ease-in-out;
+
+  .user-card__photo-container {
+    width: 100%;
+    max-height: 270px;
+
+    overflow: hidden;
+  }
+
+  .user-card__hashtags-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .user-card__flags-list {
+    position: absolute;
+    top: 273px;
+    left: 50%;
+
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .user-card__flags-item {
+    padding: 0;
+    margin: 0 9.5px;
+  }
+
+  .user-card__flags-svg {
+    width: 36px;
+    height: 27px;
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+}
+
+///////////////////////////////////
+//     Раскладка на десктопе     //
+///////////////////////////////////
+
+@media (min-width: $desktop-width) {
+}

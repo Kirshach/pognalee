@@ -492,14 +492,26 @@
         <h2 class="companions__heading section-heading">Попутчики</h2>
         <p class="companions__paragraph">
           Все мы индивидуальны и у каждого свой взгляд на идеальный отдых.
-          Одному нужен пляж и коктейль, а другому маршрут для хайкинга.
+          Одному нужен пляж и коктейль, а другому маршрут
+          <span class="no-wrap">для хайкинга</span>.
         </p>
-        <p class="companions__paragraph companion__paragraph--bold">
+        <p class="companions__paragraph companions__paragraph--bold">
           Теперь можно легко найти единомышленников!
         </p>
         <ul class="companions__list">
           <li class="companions__item">
             <article class="companions__user-card user-card">
+              <div class="user-card__photo-container">
+                <img
+                  class="user-card__photo"
+                  src="img/firsova-desktop@1x.jpg"
+                  srcset="img/firsova-desktop@2x.jpg 2x"
+                  alt="Фото пользователя Таня Фирсова"
+                  width="270"
+                  ,
+                  height="270"
+                />
+              </div>
               <div class="user-card__container">
                 <h3 class="user-card__name">Таня Фирсова</h3>
                 <ul class="user-card__hashtags-list">
@@ -517,9 +529,42 @@
                   <li class="user-card__icon-item"></li>
                 </ul>
                 <ul class="user-card__flags-list">
-                  <li class="user-card__flags-item"></li>
-                  <li class="user-card__flags-item"></li>
-                  <li class="user-card__flags-item"></li>
+                  <li class="user-card__flags-item">
+                    <svg
+                      class="user-card__flags-svg"
+                      width="35"
+                      height="25"
+                      alt="Флаг Шри-Ланки"
+                      aria-hidden="true"
+                    >
+                      <use href="img/sprite.svg#icon-flag-sri-lanka" />
+                    </svg>
+                    <span class="visually-hidden"> Шри-Ланка </span>
+                  </li>
+                  <li class="user-card__flags-item">
+                    <svg
+                      class="user-card__flags-svg"
+                      width="35"
+                      height="25"
+                      alt="Флаг Тайланда"
+                      aria-hidden="true"
+                    >
+                      <use href="img/sprite.svg#icon-flag-thailand" />
+                    </svg>
+                    <span class="visually-hidden"> Тайланд </span>
+                  </li>
+                  <li class="user-card__flags-item">
+                    <svg
+                      class="user-card__flags-svg"
+                      width="35"
+                      height="25"
+                      alt="Флаг Сейшельских островов"
+                      aria-hidden="true"
+                    >
+                      <use href="img/sprite.svg#icon-flag-seychelles" />
+                    </svg>
+                    <span class="visually-hidden"> Сейшельские острова </span>
+                  </li>
                 </ul>
               </div>
             </article>

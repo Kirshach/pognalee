@@ -7,7 +7,7 @@
 let emptyLinks = document.querySelectorAll('a[href=""]');
 if (emptyLinks.length !== 0) {
   for (let link of emptyLinks) {
-    link.onclick = function(event) {
+    link.onclick = function (event) {
       event.preventDefault();
     }
   }
@@ -31,7 +31,7 @@ if (headerToggler !== undefined) {
 
   // Добавляем активность переключателю меню
   let pageBody = document.querySelector('.page-body');
-  headerToggler.onclick = function() {
+  headerToggler.onclick = function () {
     // Блоком if - else блокируем скролл тела страницы во время открытия меню
     // и сохраняем положение тела страницы при закрытии меню
     // (код украден с css-tricks: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/ )
@@ -82,8 +82,8 @@ if (headerToggler !== undefined) {
   // Создаём стилевой объект и присваиваем ему значение
   let style = document.createElement('style');
   style.innerHTML = `
-  .page-header__bottom-container--has-js { transition: left 0.5s }
-  .page-header__bottom-container--closed { transition: left 0.4s ease-out }
+  .page-header__bottom-container--has-js { transition: transform 0.5s }
+  .page-header__bottom-container--closed { transition: transform 0.4s ease-out }
   .page-header__menu-toggler rect { transition: transform 0.2s }
   `;
 
@@ -95,7 +95,7 @@ if (headerToggler !== undefined) {
   // Контролируем визуальное отображение шапки в зависимости от скролла
   /////
 
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     let breakpoint = 50;
     let scroll = window.scrollY;
 
@@ -295,7 +295,7 @@ function applyFocusVisiblePolyfill(scope) {
       // regular focus change.
       hadFocusVisibleRecently = true;
       window.clearTimeout(hadFocusVisibleRecentlyTimeout);
-      hadFocusVisibleRecentlyTimeout = window.setTimeout(function() {
+      hadFocusVisibleRecentlyTimeout = window.setTimeout(function () {
         hadFocusVisibleRecently = false;
       }, 100);
       removeFocusVisibleClass(e.target);

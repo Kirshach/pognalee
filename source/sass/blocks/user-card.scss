@@ -1,0 +1,30 @@
+.user-card {
+  background-color: var(--ternary-color);
+
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.user-card:hover {
+  box-shadow: 0px 4px 9px var(--box-shadow-color);
+  transition: box-shadow 0.15s ease-out;
+
+  .user-card__photo {
+    transform: scale(1.15);
+    transition: transform 0.15s ease-out;
+  }
+}
+
+.user-card__photo {
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-card__name {
+  font-weight: 700;
+  font-size: 1.3125rem;
+  line-height: 100%;
+
+  color: var(--main-color--lighter2);
+}
