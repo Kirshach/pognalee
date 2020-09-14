@@ -1,6 +1,7 @@
 :root {
   // Глобальные цвета
   --box-shadow-color: rgba(0, 0, 0, 0.16);
+  --box-shadow-color2: rgba(0, 0, 0, 0.6);
   --main-color: #161c36;
   --main-color--tablet: #182044;
   --main-color--desktop: #161c34;
@@ -16,6 +17,7 @@
   --secondary-color--darker: #cccccc;
   --ternary-color: #ffffff;
   --text-main-color: #444444;
+  --user-is-active-color: #f97676;
   // прозрачный цвет, чтобы сафари справился с linear-gradient
   --transparent: rgba(255, 255, 255, 0);
 

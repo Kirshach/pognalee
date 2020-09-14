@@ -59,6 +59,7 @@
 
 .companions__item {
   padding: 0;
+  margin-bottom: 9px;
 }
 
 //////////////
@@ -84,11 +85,66 @@
     overflow: hidden;
   }
 
-  .user-card__hashtags-list {
+  .user-card__level {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-card__level-par {
+    position: absolute;
+    z-index: 1;
+
     display: flex;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 9px 0 0;
     margin: 0;
-    list-style: none;
+
+    font-size: 0.875rem;
+    color: var(--ternary-color);
+
+    span {
+      padding: 0;
+      margin: 0;
+    }
+
+    .bold {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 95%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 36px;
+        left: 15px;
+
+        width: 30px;
+        height: 1px;
+
+        background-color: var(--ternary-color);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .user-card__level-svg {
+    position: absolute;
+  }
+
+  .user-card__container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.7em 1.5em 1.13em;
   }
 
   .user-card__flags-list {
@@ -112,6 +168,69 @@
   .user-card__flags-svg {
     width: 36px;
     height: 27px;
+  }
+
+  .user-card__name {
+    position: relative;
+
+    max-width: 80%;
+    padding: 0;
+    margin: 0 auto 0.7em;
+
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.3em;
+      left: -17px;
+
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--user-is-active-color);
+    }
+  }
+
+  .user-card__hashtags-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0 0 1.02em;
+
+    list-style: none;
+  }
+
+  .user-card__hashtags-item {
+    padding: 0;
+    margin: 0 0.15em;
+  }
+
+  .user-card__icon-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0;
+    margin: 0 auto;
+
+    list-style: none;
+  }
+
+  .user-card__icon-item {
+    padding: 0;
+    margin: 0 0.43em;
+
+    opacity: 0.15;
+
+    &--preferred {
+      opacity: 1;
+    }
+
+    & svg {
+      fill: var(--main-color--darker);
+    }
   }
 }
 
