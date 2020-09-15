@@ -424,7 +424,10 @@
           </article>
         </li>
         <li class="companions__item">
-          <article class="companions__user-card user-card">
+          <article class="companions__user-card user-card user-card--user-is-active">
+            <div class="user-card__photo-container">
+              <img class="user-card__photo" src="img/demin-desktop@1x.jpg" srcset="img/demin-desktop@2x.jpg 2x" alt="Фото пользователя Петя Демин" width="270" , height="270" />
+            </div>
             <div class="user-card__container">
               <h3 class="user-card__name">Петя Демин</h3>
               <ul class="user-card__hashtags-list">
@@ -435,21 +438,55 @@
                 <li class="user-card__hashtags-item">#крафт</li>
               </ul>
               <ul class="user-card__icon-list">
-                <li class="user-card__icon-item"></li>
-                <li class="user-card__icon-item"></li>
-                <li class="user-card__icon-item"></li>
-                <li class="user-card__icon-item"></li>
+                <li class="user-card__icon-item user-card__icon-item--preferred">
+                  <svg class="user-card__icon-svg" width="20" height="20">
+                    <use href="img/sprite.svg#icon-plane" />
+                  </svg>
+                </li>
+                <li class="user-card__icon-item user-card__icon-item--preferred">
+                  <svg width="20" height="20">
+                    <use href="img/sprite.svg#icon-bus" />
+                  </svg>
+                </li>
+                <li class="user-card__icon-item">
+                  <svg width="20" height="20">
+                    <use href="img/sprite.svg#icon-bike" />
+                  </svg>
+                </li>
+                <li class="user-card__icon-item user-card__icon-item--preferred">
+                  <svg width="20" height="20">
+                    <use href="img/sprite.svg#icon-run" />
+                  </svg>
+                </li>
               </ul>
               <ul class="user-card__flags-list">
-                <li class="user-card__flags-item"></li>
-                <li class="user-card__flags-item"></li>
-                <li class="user-card__flags-item"></li>
+                <li class="user-card__flags-item">
+                  <svg class="user-card__flags-svg" width="35" height="25" alt="Флаг Бельгии" aria-hidden="true">
+                    <use href="img/sprite.svg#icon-flag-belgium" />
+                  </svg>
+                  <span class="visually-hidden"> Бельгия </span>
+                </li>
+                <li class="user-card__flags-item">
+                  <svg class="user-card__flags-svg" width="35" height="25" alt="Флаг Чехии" aria-hidden="true">
+                    <use href="img/sprite.svg#icon-flag-czech" />
+                  </svg>
+                  <span class="visually-hidden"> Чехия </span>
+                </li>
               </ul>
+            </div>
+            <div class="user-card__level">
+              <svg class="user-card__level-svg" height="60" width="60">
+                <use href="img/sprite.svg#icon-progress-circle--80">
+              </svg>
+              <p class="user-card__level-par">
+                <span class="bold">80</span>
+                <span>level</span>
+              </p>
             </div>
           </article>
         </li>
       </ul>
-      <a class="companions__button button" href=""></a>
+      <a class="companions__button button button--square" href="">Показать всех</a>
     </section>
     <section class="add-your-profile">
       <h2 class="add-your-profile__heading">Добавьте свой профиль</h2>

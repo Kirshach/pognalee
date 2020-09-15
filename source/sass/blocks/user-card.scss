@@ -27,4 +27,63 @@
   line-height: 100%;
 
   color: var(--main-color--lighter2);
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--user-is-inactive-color);
+  }
+}
+
+.user-card--user-is-active {
+  .user-card__name::before {
+    background-color: var(--user-is-active-color);
+  }
+}
+
+.user-card__level {
+  width: 60px;
+  height: 60px;
+}
+
+.user-card__level-par {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 9px 0 0;
+  margin: 0;
+
+  font-size: 0.875rem;
+
+  span {
+    padding: 0;
+    margin: 0;
+  }
+
+  .bold {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 95%;
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    top: 36px;
+    left: 15px;
+
+    width: 30px;
+    height: 1px;
+
+    background-color: var(--ternary-color);
+    opacity: 0.3;
+  }
 }

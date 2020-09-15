@@ -10,7 +10,6 @@ $menu-toggler-width: 35px;
 //////////
 
 .page-header__top-container {
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 101;
@@ -28,6 +27,12 @@ $menu-toggler-width: 35px;
 
   .page-header__authorize-button {
     display: none;
+  }
+}
+
+.page-header--has-js {
+  .page-header__top-container {
+    position: fixed;
   }
 }
 
@@ -256,12 +261,6 @@ $menu-toggler-width: 35px;
 @media (min-width: $tablet-width) and (min-height: $tablet-width) {
   $tablet-top-padding: 41px;
 
-  .page-header--has-js {
-    .page-header__top-container {
-      background: transparent;
-    }
-  }
-
   //////////
   // Верхняя часть
   //////////
@@ -271,9 +270,11 @@ $menu-toggler-width: 35px;
 
     width: 100%;
     padding: 0 var(--page-padding);
+  }
 
+  .page-header--has-js {
     .page-header__authorize-button {
-      display: inline-flex;
+      display: flex;
 
       position: fixed;
       top: calc(var(--header-top-height) / 2 - 25px);
@@ -281,7 +282,9 @@ $menu-toggler-width: 35px;
       z-index: 10;
 
       width: auto;
+      height: 50px;
       max-width: 300px;
+      padding: 0.67em 1.45em 0.6em;
       margin: 0;
     }
   }
@@ -370,18 +373,6 @@ $menu-toggler-width: 35px;
     max-height: 1600px;
     padding: calc(30px + var(--header-top-height))
       calc(var(--page-padding) + 57px) 32px;
-
-    &::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-
-      height: 132px;
-      width: 100vw;
-      background-color: var(--ternary-color);
-      transition: background-color 0.2s ease-out;
-    }
   }
 
   .page-header--is-on-top {
@@ -446,6 +437,7 @@ $menu-toggler-width: 35px;
     z-index: 100;
 
     width: 100vw;
+    height: 90px;
 
     background-color: var(--ternary-color);
 
@@ -467,6 +459,16 @@ $menu-toggler-width: 35px;
       background-color: var(--main-color);
 
       transition: $header-transition-in;
+    }
+  }
+
+  .page-header--has-js {
+    .page-header__top-container {
+      position: static;
+    }
+
+    .page-header__authorize-button {
+      position: static;
     }
   }
 
@@ -504,6 +506,8 @@ $menu-toggler-width: 35px;
 
     background-color: transparent;
     overflow: hidden;
+
+    transform: translateX(0);
 
     &::before {
       content: none;
