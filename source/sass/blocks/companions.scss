@@ -87,8 +87,13 @@
   .user-card__photo-container {
     width: 100%;
     max-height: 270px;
+    border-radius: 10px 10px 0 0;
 
     overflow: hidden;
+
+    // Хак для webkit-браузеров, избавляющий от бага анимации увеличения фото при зуме
+    // (без него появляется временный видимый overflow)
+    transform: translateZ(0);
   }
 
   .user-card__level {
@@ -207,7 +212,120 @@
 //     Раскладка на планшете     //
 ///////////////////////////////////
 
-@media (min-width: $tablet-width) {
+@media (min-width: $tablet-width + 110px) {
+  .companions {
+    padding: calc(var(--section-br) + 140px) var(--page-padding--wider)
+      calc(4% + 56px);
+    background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 143px
+        right 15.3% / 285px 285px,
+      var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg")
+        no-repeat top 488px left 6.5% / 143px 143px;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/rogovaya-back-desktop@2x.jpg") no-repeat top 143px
+          right 15.3% / 285px 285px,
+        var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg")
+          no-repeat top 488px left 6.5% / 143px 143px;
+    }
+
+    &::before {
+      top: 133px;
+      left: var(--page-padding);
+
+      width: 212px;
+      height: 212px;
+    }
+  }
+
+  .companions__heading {
+    padding: 0;
+    margin: 0 0 1.15em;
+  }
+
+  .companions__paragraph {
+    width: 75%;
+    max-width: 550px;
+    margin: 0 0 1.42em;
+
+    font-size: 1.75rem;
+    line-height: 121%;
+
+    &--bold {
+      width: auto;
+      max-width: 60%;
+      margin: 0 0 calc(11% - 9px);
+
+      font-size: 1.3125rem;
+      line-height: 114%;
+    }
+  }
+
+  .companions__list {
+    display: flex;
+    flex-direction: row;
+
+    width: max-content;
+    margin: 0 auto calc(5% + 50px);
+  }
+
+  .companions__item {
+    margin: 0 50px 0 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  //////////////
+  //  Карточка пользователя
+  /////////////
+
+  .companions__user-card {
+    width: 285px;
+    border-radius: 20px;
+
+    .user-card__photo-container {
+      border-radius: 20px 20px 0 0;
+      max-height: 285px;
+    }
+
+    .user-card__level {
+      top: 20px;
+      left: 22px;
+    }
+
+    .user-card__container {
+      padding: 1.87em 1.5em 1.55em;
+    }
+
+    .user-card__flags-list {
+      top: 286px;
+    }
+
+    .user-card__name {
+      margin: 0 auto 0.94em;
+
+      font-size: 1.5rem;
+
+      &::before {
+        top: 0.33em;
+        left: -22px;
+      }
+    }
+
+    .user-card__hashtags-list {
+      max-width: 100%;
+      margin: 0 auto 1.3em;
+
+      font-size: 1.25rem;
+      line-height: 115%;
+    }
+  }
+
+  // Кнопуля
+  .companions__button {
+    width: 100%;
+  }
 }
 
 ///////////////////////////////////
@@ -215,4 +333,126 @@
 ///////////////////////////////////
 
 @media (min-width: $desktop-width) {
+  .companions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: calc(var(--section-br) + 128px) var(--page-padding) calc(4% + 77px)
+      var(--page-padding--wider);
+    background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 442px
+        left 16.4% / 285px 285px,
+      var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg")
+        no-repeat top 190px left 42.2% / 143px 143px;
+    @media (min-resolution: 2dppx) {
+      // background: url("../img/rogovaya-back-desktop@2x.jpg") no-repeat top 143px
+      //     right 15.3% / 285px 285px,
+      //   var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg")
+      //     no-repeat top 488px left 6.5% / 143px 143px;
+    }
+
+    &::before {
+      top: 126px;
+    }
+  }
+
+  .companions__top-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    padding-bottom: 3.3em;
+  }
+
+  .companions__heading {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    padding: 0;
+    margin: 0 0 1.15em;
+  }
+
+  .companions__paragraph {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    margin: 0 0 1.47em;
+
+    line-height: 118%;
+
+    &--bold {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      // width: auto;
+      // max-width: 60%;
+      // margin: 0 0 calc(11% - 9px);
+
+      // font-size: 1.3125rem;
+      // line-height: 114%;
+    }
+  }
+
+  .companions__list {
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+
+    margin: 7px 0 0;
+  }
+
+  .companions__item {
+    margin: 0 60px 0 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  //////////////
+  //  Карточка пользователя
+  /////////////
+
+  .companions__user-card {
+    width: 285px;
+    border-radius: 20px;
+
+    .user-card__photo-container {
+      // max-height: 285px;
+    }
+
+    .user-card__level {
+      // top: 20px;
+      // left: 22px;
+    }
+
+    .user-card__container {
+      // padding: 1.87em 1.5em 1.55em;
+    }
+
+    .user-card__flags-list {
+      // top: 286px;
+    }
+
+    .user-card__name {
+      // margin: 0 auto 0.94em;
+
+      // font-size: 1.5rem;
+
+      &::before {
+        // top: 0.33em;
+        // left: -22px;
+      }
+    }
+
+    .user-card__hashtags-list {
+      // max-width: 100%;
+      // margin: 0 auto 1.3em;
+
+      // font-size: 1.25rem;
+      // line-height: 115%;
+    }
+  }
+
+  // Кнопуля
+  .companions__button {
+    width: 280px;
+    margin: 0;
+  }
 }

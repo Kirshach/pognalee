@@ -87,3 +87,18 @@
     opacity: 0.3;
   }
 }
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width + 110px) {
+  .user-card__name {
+    font-size: 1.5rem;
+
+    &::before {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}

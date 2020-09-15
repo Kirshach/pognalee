@@ -164,7 +164,7 @@ a {
 
 @media (min-width: 600px) {
   .button--square {
-    min-height: 80px;
+    height: 80px;
     padding: 1.23em 3.25em 1.15em 1.34em;
     font-size: 1.5rem;
     line-height: 100%;
@@ -425,6 +425,13 @@ a {
     background-color: var(--ternary-color);
     opacity: 0.3; }
 
+@media (min-width: 710px) {
+  .user-card__name {
+    font-size: 1.5rem; }
+    .user-card__name::before {
+      width: 8px;
+      height: 8px; } }
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -619,7 +626,9 @@ a {
   .companions__user-card .user-card__photo-container {
     width: 100%;
     max-height: 270px;
-    overflow: hidden; }
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    transform: translateZ(0); }
   .companions__user-card .user-card__level {
     position: absolute;
     top: 17px;
@@ -687,6 +696,113 @@ a {
 .companions__button {
   width: 270px;
   margin: 0 auto; }
+
+@media (min-width: 710px) {
+  .companions {
+    padding: calc(var(--section-br) + 140px) var(--page-padding--wider) calc(4% + 56px);
+    background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 143px right 15.3%/285px 285px, var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg") no-repeat top 488px left 6.5%/143px 143px; } }
+  @media (min-width: 710px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 710px) and (min-resolution: 2dppx) {
+    .companions {
+      background: url("../img/rogovaya-back-desktop@2x.jpg") no-repeat top 143px right 15.3%/285px 285px, var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg") no-repeat top 488px left 6.5%/143px 143px; } }
+
+@media (min-width: 710px) {
+    .companions::before {
+      top: 133px;
+      left: var(--page-padding);
+      width: 212px;
+      height: 212px; }
+  .companions__heading {
+    padding: 0;
+    margin: 0 0 1.15em; }
+  .companions__paragraph {
+    width: 75%;
+    max-width: 550px;
+    margin: 0 0 1.42em;
+    font-size: 1.75rem;
+    line-height: 121%; }
+    .companions__paragraph--bold {
+      width: auto;
+      max-width: 60%;
+      margin: 0 0 calc(11% - 9px);
+      font-size: 1.3125rem;
+      line-height: 114%; }
+  .companions__list {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto calc(5% + 50px); }
+  .companions__item {
+    margin: 0 50px 0 0; }
+    .companions__item:last-of-type {
+      margin: 0; }
+  .companions__user-card {
+    width: 285px;
+    border-radius: 20px; }
+    .companions__user-card .user-card__photo-container {
+      border-radius: 20px 20px 0 0;
+      max-height: 285px; }
+    .companions__user-card .user-card__level {
+      top: 20px;
+      left: 22px; }
+    .companions__user-card .user-card__container {
+      padding: 1.87em 1.5em 1.55em; }
+    .companions__user-card .user-card__flags-list {
+      top: 286px; }
+    .companions__user-card .user-card__name {
+      margin: 0 auto 0.94em;
+      font-size: 1.5rem; }
+      .companions__user-card .user-card__name::before {
+        top: 0.33em;
+        left: -22px; }
+    .companions__user-card .user-card__hashtags-list {
+      max-width: 100%;
+      margin: 0 auto 1.3em;
+      font-size: 1.25rem;
+      line-height: 115%; }
+  .companions__button {
+    width: 100%; } }
+
+@media (min-width: 1200px) {
+  .companions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: calc(var(--section-br) + 128px) var(--page-padding) calc(4% + 77px) var(--page-padding--wider);
+    background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 442px left 16.4%/285px 285px, var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg") no-repeat top 190px left 42.2%/143px 143px; }
+    .companions::before {
+      top: 126px; }
+  .companions__top-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-bottom: 3.3em; }
+  .companions__heading {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 0;
+    margin: 0 0 1.15em; }
+  .companions__paragraph {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: 0 0 1.47em;
+    line-height: 118%; }
+    .companions__paragraph--bold {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4; }
+  .companions__list {
+    grid-column: 2 / 3;
+    grid-row: 1 / 5;
+    margin: 7px 0 0; }
+  .companions__item {
+    margin: 0 60px 0 0; }
+    .companions__item:last-of-type {
+      margin: 0; }
+  .companions__user-card {
+    width: 285px;
+    border-radius: 20px; }
+  .companions__button {
+    width: 280px;
+    margin: 0; } }
 
 .directions {
   position: relative;
