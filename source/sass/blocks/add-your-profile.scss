@@ -1,0 +1,236 @@
+.add-your-profile {
+  position: relative;
+
+  padding: calc(var(--section-br) + 3.28em) var(--page-padding) 37px
+    var(--page-padding--wider);
+  margin: calc(-1 * var(--section-br)) 0 0;
+
+  border-radius: var(--section-br);
+  background-color: var(--secondary-color);
+}
+
+.add-your-profile__wrapper {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.add-your-profile__heading {
+  width: 5em;
+  padding: 0;
+  margin: 0 0 1.74em;
+}
+
+.add-your-profile__img {
+  position: absolute;
+  top: 67px;
+  // right: max(var(--page-padding), 10%);
+  left: calc(67% - 20px);
+}
+
+.add-your-profile__list {
+  counter-reset: add-your-profile-counter;
+
+  padding: 0;
+  margin: 0 0 1.86em;
+}
+
+.add-your-profile__item {
+  $profile-item-margin-right: 45px;
+  position: relative;
+  counter-increment: add-your-profile-counter;
+
+  padding: 0.74em 0;
+  margin: 0 $profile-item-margin-right 0.1em 0;
+
+  border-bottom: 1px solid var(--secondary-color--lighter3);
+
+  &::after {
+    content: counter(add-your-profile-counter);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3px;
+    right: -1 * $profile-item-margin-right;
+
+    height: 34px;
+    width: 34px;
+    padding: 0.15em 0 0;
+    margin: 0;
+
+    border-radius: 50%;
+    color: var(--ternary-color);
+  }
+}
+
+.add-your-profile__item:first-of-type {
+  border-top: 1px solid var(--secondary-color--lighter3);
+}
+
+.add-your-profile__item:nth-of-type(1)::after {
+  background-color: var(--accent-color4);
+}
+
+.add-your-profile__item:nth-of-type(2)::after {
+  background-color: var(--accent-color2);
+}
+
+.add-your-profile__item:nth-of-type(3)::after {
+  background-color: var(--accent-color);
+}
+
+.add-your-profile__term,
+.add-your-profile__definition {
+  padding: 0;
+  font-weight: 300;
+}
+
+.add-your-profile__term {
+  margin: 0 0 0.25em;
+}
+
+.add-your-profile__definition {
+  padding: 0;
+  margin: 0;
+}
+
+.add-your-profile__show-more {
+  display: block;
+
+  margin: 0 auto;
+
+  font-weight: 700;
+  color: var(--main-color--darker2);
+
+  transition: opacity 0.1s;
+
+  &:hover {
+    opacity: 0.7;
+    transition: opacity 0.05s;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: opacity 0.02s;
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на планшете     //
+///////////////////////////////////
+
+@media (min-width: $tablet-width) {
+  .add-your-profile {
+    // padding: calc(var(--section-br) + 3.28em) var(--page-padding) 37px
+    //   var(--page-padding--wider);
+    // margin: calc(-1 * var(--section-br)) 0 0;
+
+    // border-radius: var(--section-br);
+    // background-color: var(--secondary-color);
+  }
+
+  .add-your-profile__heading {
+    // width: 5em;
+    // padding: 0;
+    // margin: 0 0 1.74em;
+  }
+
+  .add-your-profile__img {
+    // position: absolute;
+    // top: 67px;
+    // right: var(--page-padding);
+  }
+
+  .add-your-profile__list {
+    // counter-reset: add-your-profile-counter;
+
+    // padding: 0;
+    // margin: 0 0 1.86em;
+  }
+
+  .add-your-profile__item {
+    // $profile-item-margin-right: 45px;
+    // position: relative;
+    // counter-increment: add-your-profile-counter;
+
+    // padding: 0.74em 0;
+    // margin: 0 $profile-item-margin-right 0.1em 0;
+
+    // border-bottom: 1px solid var(--secondary-color--lighter3);
+
+    &::after {
+      // content: counter(add-your-profile-counter);
+
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // position: absolute;
+      // top: 3px;
+      // right: -1 * $profile-item-margin-right;
+
+      // height: 34px;
+      // width: 34px;
+      // padding: 0.15em 0 0;
+      // margin: 0;
+
+      // border-radius: 50%;
+      // color: var(--ternary-color);
+    }
+  }
+
+  .add-your-profile__item:first-of-type {
+    // border-top: 1px solid var(--secondary-color--lighter3);
+  }
+
+  .add-your-profile__item:nth-of-type(1)::after {
+    // background-color: var(--accent-color4);
+  }
+
+  .add-your-profile__item:nth-of-type(2)::after {
+    // background-color: var(--accent-color2);
+  }
+
+  .add-your-profile__item:nth-of-type(3)::after {
+    // background-color: var(--accent-color);
+  }
+
+  .add-your-profile__term,
+  .add-your-profile__definition {
+    // padding: 0;
+    // font-weight: 300;
+  }
+
+  .add-your-profile__term {
+    // margin: 0 0 0.25em;
+  }
+
+  .add-your-profile__definition {
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .add-your-profile__show-more {
+    // font-weight: 700;
+    // color: var(--main-color--darker2);
+
+    // transition: opacity 0.1s;
+
+    &:hover {
+      // opacity: 0.7;
+      // transition: opacity 0.05s;
+    }
+
+    &:active {
+      // opacity: 0.3;
+      // transition: opacity 0.02s;
+    }
+  }
+}
+
+///////////////////////////////////
+//     Раскладка на десктопе     //
+///////////////////////////////////
+
+@media (min-width: $desktop-width) {
+}

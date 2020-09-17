@@ -51,6 +51,7 @@
   --secondary-color: #e6e8f1;
   --secondary-color--lighter: #edeff6;
   --secondary-color--lighter2: #e2e5f2;
+  --secondary-color--lighter3: #e1e3e9;
   --secondary-color--darker: #cccccc;
   --ternary-color: #ffffff;
   --text-main-color: #444444;
@@ -379,10 +380,12 @@ a {
   transition: transform 0.2s ease-in-out; }
 
 .user-card__name {
+  display: block;
   font-weight: 700;
   font-size: 1.3125rem;
   line-height: 100%;
-  color: var(--main-color--lighter2); }
+  color: var(--main-color--lighter2);
+  transition: opacity 0.1s; }
   .user-card__name::before {
     content: "";
     position: absolute;
@@ -390,6 +393,12 @@ a {
     height: 6px;
     border-radius: 50%;
     background-color: var(--user-is-inactive-color); }
+  .user-card__name:hover {
+    opacity: 0.7;
+    transition: opacity 0.05s; }
+  .user-card__name:active {
+    opacity: 0.3;
+    transition: opacity 0.01s; }
 
 .user-card--user-is-active .user-card__name::before {
   background-color: var(--user-is-active-color); }
@@ -565,6 +574,90 @@ a {
     margin-bottom: 4em; }
   .about-service__button {
     width: 274px; } }
+
+.add-your-profile {
+  position: relative;
+  padding: calc(var(--section-br) + 3.28em) var(--page-padding) 37px var(--page-padding--wider);
+  margin: calc(-1 * var(--section-br)) 0 0;
+  border-radius: var(--section-br);
+  background-color: var(--secondary-color); }
+
+.add-your-profile__wrapper {
+  max-width: 320px;
+  margin: 0 auto; }
+
+.add-your-profile__heading {
+  width: 5em;
+  padding: 0;
+  margin: 0 0 1.74em; }
+
+.add-your-profile__img {
+  position: absolute;
+  top: 67px;
+  left: calc(67% - 20px); }
+
+.add-your-profile__list {
+  counter-reset: add-your-profile-counter;
+  padding: 0;
+  margin: 0 0 1.86em; }
+
+.add-your-profile__item {
+  position: relative;
+  counter-increment: add-your-profile-counter;
+  padding: 0.74em 0;
+  margin: 0 45px 0.1em 0;
+  border-bottom: 1px solid var(--secondary-color--lighter3); }
+  .add-your-profile__item::after {
+    content: counter(add-your-profile-counter);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3px;
+    right: -45px;
+    height: 34px;
+    width: 34px;
+    padding: 0.15em 0 0;
+    margin: 0;
+    border-radius: 50%;
+    color: var(--ternary-color); }
+
+.add-your-profile__item:first-of-type {
+  border-top: 1px solid var(--secondary-color--lighter3); }
+
+.add-your-profile__item:nth-of-type(1)::after {
+  background-color: var(--accent-color4); }
+
+.add-your-profile__item:nth-of-type(2)::after {
+  background-color: var(--accent-color2); }
+
+.add-your-profile__item:nth-of-type(3)::after {
+  background-color: var(--accent-color); }
+
+.add-your-profile__term,
+.add-your-profile__definition {
+  padding: 0;
+  font-weight: 300; }
+
+.add-your-profile__term {
+  margin: 0 0 0.25em; }
+
+.add-your-profile__definition {
+  padding: 0;
+  margin: 0; }
+
+.add-your-profile__show-more {
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  color: var(--main-color--darker2);
+  transition: opacity 0.1s; }
+  .add-your-profile__show-more:hover {
+    opacity: 0.7;
+    transition: opacity 0.05s; }
+  .add-your-profile__show-more:active {
+    opacity: 0.3;
+    transition: opacity 0.02s; }
 
 .companions {
   position: relative;
@@ -769,7 +862,12 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: calc(var(--section-br) + 128px) var(--page-padding) calc(4% + 77px) var(--page-padding--wider);
-    background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 442px left 16.4%/285px 285px, var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg") no-repeat top 190px left 42.2%/143px 143px; }
+    background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 442px left 16.4%/285px 285px, var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg") no-repeat top 190px left 42.2%/143px 143px; } }
+  @media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 2dppx) {
+    .companions {
+      background: url("../img/rogovaya-back-desktop@2x.jpg") no-repeat top 442px left 16.4%/285px 285px, var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg") no-repeat top 190px left 42.2%/143px 143px; } }
+
+@media (min-width: 1200px) {
     .companions::before {
       top: 126px; }
   .companions__top-container {
@@ -797,9 +895,6 @@ a {
     margin: 0 60px 0 0; }
     .companions__item:last-of-type {
       margin: 0; }
-  .companions__user-card {
-    width: 285px;
-    border-radius: 20px; }
   .companions__button {
     width: 280px;
     margin: 0; } }
@@ -1012,6 +1107,10 @@ a {
     width: 275px;
     margin: 0;
     margin-top: 11px; } }
+
+.got-interested {
+  background-color: var(--main-color--darker3);
+  margin-top: calc(-1 * var(--section-br)); }
 
 .page-header {
   max-width: 2200px;

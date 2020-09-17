@@ -344,10 +344,10 @@
       var(--main-color--lighter) url("../img/smolov-back-desktop@1x.jpg")
         no-repeat top 190px left 42.2% / 143px 143px;
     @media (min-resolution: 2dppx) {
-      // background: url("../img/rogovaya-back-desktop@2x.jpg") no-repeat top 143px
-      //     right 15.3% / 285px 285px,
-      //   var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg")
-      //     no-repeat top 488px left 6.5% / 143px 143px;
+      background: url("../img/rogovaya-back-desktop@2x.jpg") no-repeat top 442px
+          left 16.4% / 285px 285px,
+        var(--main-color--lighter) url("../img/smolov-back-desktop@2x.jpg")
+          no-repeat top 190px left 42.2% / 143px 143px;
     }
 
     &::before {
@@ -381,12 +381,6 @@
     &--bold {
       grid-column: 1 / 2;
       grid-row: 3 / 4;
-      // width: auto;
-      // max-width: 60%;
-      // margin: 0 0 calc(11% - 9px);
-
-      // font-size: 1.3125rem;
-      // line-height: 114%;
     }
   }
 
@@ -402,51 +396,6 @@
 
     &:last-of-type {
       margin: 0;
-    }
-  }
-
-  //////////////
-  //  Карточка пользователя
-  /////////////
-
-  .companions__user-card {
-    width: 285px;
-    border-radius: 20px;
-
-    .user-card__photo-container {
-      // max-height: 285px;
-    }
-
-    .user-card__level {
-      // top: 20px;
-      // left: 22px;
-    }
-
-    .user-card__container {
-      // padding: 1.87em 1.5em 1.55em;
-    }
-
-    .user-card__flags-list {
-      // top: 286px;
-    }
-
-    .user-card__name {
-      // margin: 0 auto 0.94em;
-
-      // font-size: 1.5rem;
-
-      &::before {
-        // top: 0.33em;
-        // left: -22px;
-      }
-    }
-
-    .user-card__hashtags-list {
-      // max-width: 100%;
-      // margin: 0 auto 1.3em;
-
-      // font-size: 1.25rem;
-      // line-height: 115%;
     }
   }
 

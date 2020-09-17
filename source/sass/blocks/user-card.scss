@@ -22,11 +22,14 @@
 }
 
 .user-card__name {
+  display: block;
   font-weight: 700;
   font-size: 1.3125rem;
   line-height: 100%;
 
   color: var(--main-color--lighter2);
+
+  transition: opacity 0.1s;
 
   &::before {
     content: "";
@@ -36,6 +39,16 @@
     height: 6px;
     border-radius: 50%;
     background-color: var(--user-is-inactive-color);
+  }
+
+  &:hover {
+    opacity: 0.7;
+    transition: opacity 0.05s;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: opacity 0.01s;
   }
 }
 
