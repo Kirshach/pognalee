@@ -109,7 +109,8 @@ a {
   margin: 0;
   font-family: "Blogger Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 16px;
-  background-color: var(--ternary-color); }
+  background-color: var(--ternary-color);
+  color: var(--text-main-color); }
 
 .button {
   position: relative;
@@ -458,7 +459,8 @@ a {
   padding: 2.05em var(--page-padding--wider) 63px;
   margin: 0;
   border-radius: 0 0 var(--section-br) var(--section-br);
-  background-color: var(--main-color--lighter); }
+  background-color: var(--main-color--lighter);
+  overflow: hidden; }
 
 .about-service__bg {
   position: absolute;
@@ -581,6 +583,9 @@ a {
   margin: calc(-1 * var(--section-br)) 0 0;
   border-radius: 0 0 var(--section-br) var(--section-br);
   background-color: var(--secondary-color); }
+  @media (min-width: 600px) {
+    .add-your-profile {
+      font-size: 1.35rem; } }
 
 .add-your-profile__wrapper {
   max-width: 320px;
@@ -599,6 +604,9 @@ a {
   @media (min-width: 390px) {
     .add-your-profile__img {
       right: calc(50% - 162px); } }
+  @media (min-width: 600px) {
+    .add-your-profile__img {
+      top: calc(30% - 65px); } }
 
 .add-your-profile__list {
   counter-reset: add-your-profile-counter;
@@ -665,6 +673,95 @@ a {
   .add-your-profile__show-more:active {
     opacity: 0.3;
     transition: opacity 0.02s; }
+
+.add-your-profile__show-more-icon {
+  display: none; }
+
+@media (min-width: 768px) and (min-width: 900px) {
+  .add-your-profile {
+    --page-padding: calc(50% - 396px); } }
+
+@media (min-width: 768px) {
+  .add-your-profile {
+    padding: calc(var(--section-br) + 5% + 32px) var(--page-padding) calc(7% + 8px);
+    background-color: var(--secondary-color--lighter); }
+  .add-your-profile__wrapper {
+    max-width: unset; }
+  .add-your-profile__heading {
+    width: 100%;
+    margin: 0 0 calc(20% - 68px);
+    text-align: center; }
+  .add-your-profile__img {
+    top: calc(50% + 163px);
+    right: calc(var(--page-padding) + 45px); }
+  .add-your-profile__list {
+    position: relative;
+    margin: 0 auto calc(10% - 40px); }
+    .add-your-profile__list::before {
+      content: "";
+      position: absolute;
+      top: -41px;
+      right: 0;
+      height: calc(100% + 41px * 2);
+      width: 198px;
+      background-color: var(--secondary-color--lighter2);
+      border-radius: 20px; }
+  .add-your-profile__item {
+    display: flex;
+    justify-content: space-between;
+    min-height: 68px;
+    padding: 0.65em 0 0.33em;
+    margin: 0 0 0 90px;
+    font-size: 1.75rem; }
+    .add-your-profile__item::after {
+      top: -2px;
+      right: unset;
+      left: -90px;
+      height: 68px;
+      width: 68px;
+      padding-top: 0.1em; }
+  .add-your-profile__term {
+    margin: 0; }
+  .add-your-profile__definition {
+    max-width: 198px;
+    margin-right: 35px; }
+  .add-your-profile__show-more {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 1.25rem; }
+  .add-your-profile__show-more-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin-right: 21px;
+    border-radius: 50%;
+    background-color: var(--secondary-color--lighter2); }
+  .add-your-profile__show-more-span {
+    margin-top: 3px; } }
+
+@media (min-width: 1200px) {
+  .add-your-profile {
+    --page-padding: calc(10% - 84px);
+    padding: calc(var(--section-br) + 5% + 32px) var(--page-padding--wider) 164px; }
+  .add-your-profile__heading {
+    margin: 0 0 calc(5% + 68px); }
+  .add-your-profile__img {
+    top: calc(60% - 140px);
+    right: calc(25% - 227px);
+    width: 198px;
+    height: 198px; }
+  .add-your-profile__list {
+    margin: 0 113px calc(10% - 88px) 0; }
+    .add-your-profile__list::before {
+      top: -48px;
+      height: calc(100% + 48px * 2);
+      width: 446px; }
+  .add-your-profile__definition {
+    max-width: 446px;
+    margin-right: 162px; } }
 
 .companions {
   position: relative;
@@ -924,8 +1021,7 @@ a {
   margin: 0 calc(var(--page-padding--wider) - var(--page-padding));
   margin-bottom: 3.78em;
   font-weight: 300;
-  line-height: 137%;
-  color: var(--text-main-color); }
+  line-height: 137%; }
 
 .directions__list {
   max-width: 300px;
@@ -969,8 +1065,7 @@ a {
   padding: 0;
   margin: 0;
   font-weight: 500;
-  opacity: 0.3;
-  color: var(--text-main-color); }
+  opacity: 0.3; }
 
 .directions__country-users {
   width: -webkit-max-content;
@@ -979,8 +1074,7 @@ a {
   padding: 0;
   margin: 5px 0 0 auto;
   font-weight: 500;
-  opacity: 0.3;
-  color: var(--text-main-color); }
+  opacity: 0.3; }
 
 .directions__user-icon {
   position: relative;
