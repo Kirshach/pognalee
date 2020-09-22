@@ -1,0 +1,56 @@
+.one-input-form {
+  position: relative;
+  height: 62px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.one-input-form__input {
+  width: 100%;
+  height: 100%;
+  padding: 0.3em calc(60px + 1em) 0.5em 1.5em;
+
+  border: none;
+
+  font-size: 1.05rem;
+  line-height: 100%;
+
+  background-color: var(--ternary-color);
+
+  transition: all 0.1s;
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+
+    color: var(--text-main-color);
+    opacity: 0.3;
+
+    transition: all 0.1s;
+  }
+
+  &:hover {
+    background-color: var(--secondary-color--lighter);
+    transition: all 0.05s ease-out;
+
+    &::placeholder {
+      opacity: 0.5;
+      transition: all 0.05s ease-out;
+    }
+  }
+}
+
+.one-input-form__submit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  height: 100%;
+  width: 60px;
+  padding: 0;
+
+  cursor: pointer;
+}

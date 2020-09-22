@@ -1,4 +1,60 @@
 .got-interested {
-  background-color: var(--main-color--darker3);
-  margin-top: calc(-1 * var(--section-br));
+  padding: calc(var(--section-br) + 4.5em) var(--page-padding) 28px;
+  margin: calc(-1 * var(--section-br)) 0 0;
+
+  border-radius: 0 0 var(--section-br) var(--section-br);
+
+  background-color: var(--main-color--lighter);
+}
+
+.got-interested__heading {
+  padding: 0;
+  margin: 0 0 0.78em;
+
+  text-align: center;
+}
+
+.got-interested__paragraph {
+  margin: 0 auto;
+
+  text-align: center;
+
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 137%;
+
+  color: var(--ternary-color);
+}
+
+.got-interested__paragraph--top {
+  max-width: 200px;
+
+  margin-bottom: 1.85em;
+}
+
+.got-interested__paragraph--bottom {
+  margin-bottom: 1.1em;
+}
+
+.got-interested__form {
+  margin-bottom: 1.8em;
+}
+
+.got-interested__contact-methods {
+  .contact-methods__link {
+    color: var(--accent-color);
+    transition: all 0.1s;
+  }
+  .contact-methods__link:hover {
+    color: var(--accent-color2);
+    transition: color 0.02s;
+  }
+
+  .contact-methods__link:active {
+    opacity: 0.3;
+  }
+
+  .contact-methods__link:active + .contact-methods__icon {
+    opacity: 0.3;
+  }
 }

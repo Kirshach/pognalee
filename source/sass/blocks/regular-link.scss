@@ -1,0 +1,18 @@
+.regular-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+
+  transition: all 0.1s;
+
+  &:hover {
+    color: var(--accent-color4);
+    text-decoration-color: var(--accent-color4);
+    transition: all 0.04s ease-out;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: all 0.02s;
+  }
+}

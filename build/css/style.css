@@ -117,6 +117,7 @@ a {
   justify-content: center;
   align-items: center;
   font-weight: 700;
+  border: none;
   background-color: var(--accent-color);
   transition: background-color 0.03s; }
   .button:hover {
@@ -188,7 +189,7 @@ a {
   background-color: var(--main-color--darker);
   border-radius: 50%;
   fill: var(--accent-color);
-  transition: fill 0.03s; }
+  transition: all 0.1s; }
 
 .contact-methods__link {
   display: block;
@@ -200,7 +201,7 @@ a {
   transform: translateY(-50%); }
   .contact-methods__link:hover + .contact-methods__icon {
     fill: var(--accent-color2);
-    transition: fill 0.01s; }
+    transition: fill 0.02s; }
 
 @media (min-width: 460px) {
   .contact-methods {
@@ -343,6 +344,56 @@ a {
 .no-wrap {
   white-space: nowrap; }
 
+.one-input-form {
+  position: relative;
+  height: 62px;
+  border-radius: 10px;
+  overflow: hidden; }
+
+.one-input-form__input {
+  width: 100%;
+  height: 100%;
+  padding: 0.3em calc(60px + 1em) 0.5em 1.5em;
+  border: none;
+  font-size: 1.05rem;
+  line-height: 100%;
+  background-color: var(--ternary-color);
+  transition: all 0.1s; }
+  .one-input-form__input::-moz-placeholder {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    color: var(--text-main-color);
+    opacity: 0.3;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s; }
+  .one-input-form__input::placeholder {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    color: var(--text-main-color);
+    opacity: 0.3;
+    transition: all 0.1s; }
+  .one-input-form__input:hover {
+    background-color: var(--secondary-color--lighter);
+    transition: all 0.05s ease-out; }
+    .one-input-form__input:hover::-moz-placeholder {
+      opacity: 0.5;
+      -moz-transition: all 0.05s ease-out;
+      transition: all 0.05s ease-out; }
+    .one-input-form__input:hover::placeholder {
+      opacity: 0.5;
+      transition: all 0.05s ease-out; }
+
+.one-input-form__submit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  padding: 0;
+  cursor: pointer; }
+
 .page-heading {
   font-weight: 700;
   font-size: 2.25rem;
@@ -353,6 +404,21 @@ a {
   .page-heading {
     font-size: 3.75rem;
     line-height: 117%; } }
+
+.regular-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  -webkit-text-decoration-color: var(--accent-color);
+          text-decoration-color: var(--accent-color);
+  transition: all 0.1s; }
+  .regular-link:hover {
+    color: var(--accent-color4);
+    -webkit-text-decoration-color: var(--accent-color4);
+            text-decoration-color: var(--accent-color4);
+    transition: all 0.04s ease-out; }
+  .regular-link:active {
+    opacity: 0.3;
+    transition: all 0.02s; }
 
 .section-heading {
   font-size: 1.5rem;
@@ -1210,8 +1276,47 @@ a {
     margin-top: 11px; } }
 
 .got-interested {
-  background-color: var(--main-color--darker3);
-  margin-top: calc(-1 * var(--section-br)); }
+  padding: calc(var(--section-br) + 4.5em) var(--page-padding) 28px;
+  margin: calc(-1 * var(--section-br)) 0 0;
+  border-radius: 0 0 var(--section-br) var(--section-br);
+  background-color: var(--main-color--lighter); }
+
+.got-interested__heading {
+  padding: 0;
+  margin: 0 0 0.78em;
+  text-align: center; }
+
+.got-interested__paragraph {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 137%;
+  color: var(--ternary-color); }
+
+.got-interested__paragraph--top {
+  max-width: 200px;
+  margin-bottom: 1.85em; }
+
+.got-interested__paragraph--bottom {
+  margin-bottom: 1.1em; }
+
+.got-interested__form {
+  margin-bottom: 1.8em; }
+
+.got-interested__contact-methods .contact-methods__link {
+  color: var(--accent-color);
+  transition: all 0.1s; }
+
+.got-interested__contact-methods .contact-methods__link:hover {
+  color: var(--accent-color2);
+  transition: color 0.02s; }
+
+.got-interested__contact-methods .contact-methods__link:active {
+  opacity: 0.3; }
+
+.got-interested__contact-methods .contact-methods__link:active + .contact-methods__icon {
+  opacity: 0.3; }
 
 .page-header {
   max-width: 2200px;
