@@ -116,6 +116,7 @@ a {
   position: relative;
   justify-content: center;
   align-items: center;
+  font-family: "Blogger Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: 700;
   border: none;
   background-color: var(--accent-color);
@@ -270,7 +271,7 @@ a {
     background-color: var(--accent-color4); }
 
 @media (min-width: 1200px) {
-  .contact-methods__link {
+  .contact-methods-mini__link {
     width: 50px;
     height: 50px;
     padding: 0;
@@ -393,6 +394,13 @@ a {
   width: 60px;
   padding: 0;
   cursor: pointer; }
+
+@media (min-width: 600px) {
+  .one-input-form {
+    height: 80px;
+    border-radius: 20px; }
+  .one-input-form__input {
+    font-size: 1.5rem; } }
 
 .page-heading {
   font-weight: 700;
@@ -1298,25 +1306,92 @@ a {
   max-width: 200px;
   margin-bottom: 1.85em; }
 
-.got-interested__paragraph--bottom {
-  margin-bottom: 1.1em; }
-
 .got-interested__form {
-  margin-bottom: 1.8em; }
+  max-width: 360px;
+  margin: 0 auto 1.8em; }
 
-.got-interested__contact-methods .contact-methods__link {
-  color: var(--accent-color);
-  transition: all 0.1s; }
+.one-input-form__submit-button-span {
+  display: none; }
 
-.got-interested__contact-methods .contact-methods__link:hover {
-  color: var(--accent-color2);
-  transition: color 0.02s; }
+.got-interested__paragraph--bottom {
+  margin-bottom: 1.1em;
+  letter-spacing: 0.01em; }
 
-.got-interested__contact-methods .contact-methods__link:active {
-  opacity: 0.3; }
+.got-interested__contact-methods {
+  margin: 0 auto; }
+  .got-interested__contact-methods .contact-methods__link {
+    color: var(--accent-color);
+    transition: all 0.1s; }
+  .got-interested__contact-methods .contact-methods__link:hover {
+    color: var(--accent-color2);
+    transition: color 0.02s; }
+  .got-interested__contact-methods .contact-methods__link:active {
+    opacity: 0.3; }
+  .got-interested__contact-methods .contact-methods__link:active + .contact-methods__icon {
+    opacity: 0.3; }
+  @media (min-width: 460px) {
+    .got-interested__contact-methods {
+      font-size: 1rem; } }
 
-.got-interested__contact-methods .contact-methods__link:active + .contact-methods__icon {
-  opacity: 0.3; }
+@media (min-width: 600px) {
+  .got-interested {
+    padding: calc(var(--section-br) + 4.5em) var(--page-padding--wider) calc(5% + 23px); }
+  .got-interested__heading {
+    margin-bottom: 1.26em; }
+  .got-interested__paragraph {
+    font-size: 1.75rem;
+    line-height: 115%; }
+  .got-interested__paragraph--top {
+    max-width: unset;
+    margin-bottom: 2.3em; }
+    .got-interested__paragraph--top .got-interested__mobile-br {
+      display: none; }
+  .got-interested__form {
+    max-width: unset;
+    margin-bottom: 3.68em; }
+  .one-input-form__submit-button {
+    width: 80px;
+    border-radius: 0 20px 20px 0; }
+  .got-interested__paragraph--bottom {
+    margin-bottom: max(calc(10% - 23px), 1.3em); }
+    .got-interested__paragraph--bottom br {
+      display: none; }
+  .got-interested__contact-methods {
+    font-size: 1.75rem; } }
+
+@media (min-width: 1200px) {
+  .got-interested {
+    padding: calc(var(--section-br) + 107px) var(--page-padding--wider) 114px; }
+  .got-interested__heading {
+    margin-bottom: 1.2em; }
+  .got-interested__paragraph--top {
+    margin-bottom: 2.05em; }
+  .got-interested__form {
+    max-width: 1200px;
+    margin-bottom: 4.35em; }
+  .one-input-form__submit-button {
+    width: auto; }
+  .one-input-form__submit-button-span {
+    display: block;
+    padding-right: 155px;
+    padding-left: 1.5em; }
+  .got-interested__paragraph--bottom {
+    margin-bottom: 1.9em; }
+  .got-interested__contact-methods {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px; }
+    .got-interested__contact-methods .contact-methods__item {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse; }
+    .got-interested__contact-methods .contact-methods__icon {
+      height: 90px;
+      width: 90px; }
+    .got-interested__contact-methods .contact-methods__link {
+      position: static;
+      transform: none; } }
 
 .page-header {
   max-width: 2200px;
