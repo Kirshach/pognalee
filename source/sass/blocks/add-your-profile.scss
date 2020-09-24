@@ -1,5 +1,6 @@
 .add-your-profile {
   position: relative;
+  z-index: 6;
 
   padding: calc(var(--section-br) + 5% + 36px) var(--page-padding)
     calc(3.5% + 26px);

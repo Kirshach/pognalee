@@ -1,4 +1,7 @@
 .got-interested {
+  position: relative;
+  z-index: 5;
+
   padding: calc(var(--section-br) + 4.5em) var(--page-padding) 28px;
   margin: calc(-1 * var(--section-br)) 0 0;
 
@@ -131,9 +134,18 @@
   }
 
   .got-interested__contact-methods {
+    width: 100%;
+    max-width: 650px;
+
     font-size: 1.75rem;
     // margin: 0 auto;
+
+    .contact-methods__item {
+      height: 68px;
+    }
+
     .contact-methods__link {
+      left: 78px;
       // color: var(--accent-color);
       // transition: all 0.1s;
     }
@@ -146,6 +158,11 @@
     }
     .contact-methods__link:active + .contact-methods__icon {
       // opacity: 0.3;
+    }
+
+    .contact-methods__icon {
+      width: 68px;
+      height: 68px;
     }
   }
 }
