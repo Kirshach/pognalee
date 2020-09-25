@@ -151,7 +151,6 @@ let mapMarker;
 function initMap() {
   let initZoom = 15.5;
   let initCenter = { lat: 55.727326, lng: 37.635951 };
-  let initMarkerPos = { lat: 55.727826, lng: 37.635951 };
   let initMarkerSize = new google.maps.Size(41, 41);
 
   map = new google.maps.Map(document.querySelector(".find-us__map"), {
@@ -161,7 +160,7 @@ function initMap() {
   });
 
   mapMarker = new google.maps.Marker({
-    position: initMarkerPos,
+    position: map.getCenter(),
     map: map,
     icon: {
       path: google.maps.SymbolPath.CIRCLE,

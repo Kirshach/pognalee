@@ -1379,15 +1379,14 @@ a {
     margin-top: 11px; } }
 
 .find-us {
-  margin: calc(-1 * var(--section-br)) 0 0;
-  background: center cover url("../img/map-mobile@1x.jpg"); }
+  margin: -110px 0 0;
+  background: center top/600px no-repeat url("../img/map-mobile@1x.jpg"); }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .find-us {
+      background-image: url("../img/map-mobile@2x.jpg"); } }
 
 .find-us__map {
-  padding: calc(20% + 136px) 0;
-  background: center/cover no-repeat url("../img/map-mobile@1x.jpg"); }
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-    .find-us__map {
-      background-image: url("../img/map-mobile@2x.jpg"); } }
+  padding: calc(20% + 176px) 0; }
 
 .got-interested {
   position: relative;
