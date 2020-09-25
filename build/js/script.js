@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 ///////////////////////////////////
 //       Глобальные скрипты      //
@@ -9,78 +9,100 @@ if (emptyLinks.length !== 0) {
   for (let link of emptyLinks) {
     link.onclick = function (event) {
       event.preventDefault();
-    }
+    };
   }
 }
-
 
 ///////////////////////////////////
 //         Скрипты меню          //
 ///////////////////////////////////
 
-let headerToggler = document.querySelector('.page-header__menu-toggler');
+let headerToggler = document.querySelector(".page-header__menu-toggler");
 if (headerToggler !== undefined) {
   // Добавляем js-активные классы
-  let pageHeader = document.querySelector('.page-header');
-  let bottomContainer = document.querySelector('.page-header__bottom-container');
-  let topContainer = document.querySelector('.page-header__top-container');
-  pageHeader.classList.add('page-header--has-js', 'page-header--is-on-top')
-  bottomContainer.classList.add('page-header__bottom-container--has-js', 'page-header__bottom-container--closed');
-  headerToggler.classList.add('page-header__menu-toggler--has-js', 'page-header__menu-toggler--closed');
-  topContainer.classList.add('page-header__top-container--is-on-top');
+  let pageHeader = document.querySelector(".page-header");
+  let bottomContainer = document.querySelector(
+    ".page-header__bottom-container"
+  );
+  let topContainer = document.querySelector(".page-header__top-container");
+  pageHeader.classList.add("page-header--has-js", "page-header--is-on-top");
+  bottomContainer.classList.add(
+    "page-header__bottom-container--has-js",
+    "page-header__bottom-container--closed"
+  );
+  headerToggler.classList.add(
+    "page-header__menu-toggler--has-js",
+    "page-header__menu-toggler--closed"
+  );
+  topContainer.classList.add("page-header__top-container--is-on-top");
 
   // Добавляем активность переключателю меню
-  let pageBody = document.querySelector('.page-body');
+  let pageBody = document.querySelector(".page-body");
   headerToggler.onclick = function () {
     // Блоком if - else блокируем скролл тела страницы во время открытия меню
     // и сохраняем положение тела страницы при закрытии меню
     // (код украден с css-tricks: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/ )
-    if (headerToggler.classList.contains('page-header__menu-toggler--closed')) {
+    if (headerToggler.classList.contains("page-header__menu-toggler--closed")) {
       document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.position = 'fixed';
+      document.body.style.position = "fixed";
     } else {
       const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
     // Добавляем/снимаем непосредственно классы на переключатель и меню
-    headerToggler.classList.toggle('page-header__menu-toggler--closed');
-    bottomContainer.classList.toggle('page-header__bottom-container--closed');
-    topContainer.classList.toggle('page-header__top-container--modal-mode');
+    headerToggler.classList.toggle("page-header__menu-toggler--closed");
+    bottomContainer.classList.toggle("page-header__bottom-container--closed");
+    topContainer.classList.toggle("page-header__top-container--modal-mode");
   };
 
   // Находим vh реального вьюпорта мобильного браузера без учёта его панели навигации
   // для имитации тру "фуллскрина" меню без риска получить в нём ненужный скролл
   // (код украден с css-tricks: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ )
   let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 
   // и обновляем vh при ресайзе реального вьюпорта
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     if (window.innerWidth >= 1200) {
-      if (document.body.style.position === 'fixed') {
+      if (document.body.style.position === "fixed") {
         const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        document.body.style.position = "";
+        document.body.style.top = "";
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
 
-        headerToggler.classList.add('page-header__menu-toggler--closed');
-        bottomContainer.classList.add('page-header__bottom-container--closed');
-        topContainer.classList.remove('page-header__top-container--modal-mode');
+        headerToggler.classList.add("page-header__menu-toggler--closed");
+        bottomContainer.classList.add("page-header__bottom-container--closed");
+        topContainer.classList.remove("page-header__top-container--modal-mode");
       }
     }
   });
+
+  let str = "2 4 7 8 10";
+  function iqTest(numbers) {
+    let tor = {};
+    let tf;
+    let res = numbers.split(" ").map((x) => (x % 2 ? true : false));
+    res.map((e) => (tor[e] = !tor[e] ? 1 : tor[e] + 1));
+    for (let key in tor) {
+      if (tor[key] == 1) {
+        tf = key;
+      }
+    }
+    console.log(tf, res); // для контроля
+    return res.indexOf(tf); // здесь возвращает -1
+  }
 
   /////
   // Назначаем переходы через JS чтобы избежать анимации при загрузке
   /////
 
   // Создаём стилевой объект и присваиваем ему значение
-  let style = document.createElement('style');
+  let style = document.createElement("style");
   style.innerHTML = `
   .page-header__bottom-container--has-js { transition: transform 0.5s }
   .page-header__bottom-container--closed { transition: transform 0.4s ease-out }
@@ -88,14 +110,14 @@ if (headerToggler !== undefined) {
   `;
 
   // Вставляем его перед первым тегом скрипта
-  let ref = document.querySelector('script');
+  let ref = document.querySelector("script");
   ref.parentNode.insertBefore(style, ref);
 
   /////
   // Контролируем визуальное отображение шапки в зависимости от скролла
   /////
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener("scroll", function () {
     let breakpoint = 50;
     let scroll = window.scrollY;
 
@@ -104,24 +126,66 @@ if (headerToggler !== undefined) {
       if (scrollY < 28) {
         pageHeader.style.top = `calc(28px - ${scrollY}px)`;
       } else {
-        pageHeader.style.top = `0px`
-      };
+        pageHeader.style.top = `0px`;
+      }
     } else {
-      pageHeader.style.top = `0px`
+      pageHeader.style.top = `0px`;
     }
 
-    if (scroll > breakpoint && topContainer.classList.contains('page-header__top-container--is-on-top')) {
-      topContainer.classList.remove('page-header__top-container--is-on-top');
-      pageHeader.classList.remove('page-header--is-on-top')
-    } else if (scroll < breakpoint - 20 && !topContainer.classList.contains('page-header__top-container--is-on-top')) {
-      if (!topContainer.classList.contains('page-header__top-container--modal-mode')) {
-        topContainer.classList.add('page-header__top-container--is-on-top');
-        pageHeader.classList.add('page-header--is-on-top')
+    if (
+      scroll > breakpoint &&
+      topContainer.classList.contains("page-header__top-container--is-on-top")
+    ) {
+      topContainer.classList.remove("page-header__top-container--is-on-top");
+      pageHeader.classList.remove("page-header--is-on-top");
+    } else if (
+      scroll < breakpoint - 20 &&
+      !topContainer.classList.contains("page-header__top-container--is-on-top")
+    ) {
+      if (
+        !topContainer.classList.contains(
+          "page-header__top-container--modal-mode"
+        )
+      ) {
+        topContainer.classList.add("page-header__top-container--is-on-top");
+        pageHeader.classList.add("page-header--is-on-top");
       }
     }
   });
 }
 
+///////////////////////////////////
+//      Скрипт Google Maps       //
+///////////////////////////////////
+
+let map;
+let mapMarker;
+
+// 55.727326, 37.635951
+
+function initMap() {
+  let initZoom = 16;
+  let initCenter = { lat: 55.727326, lng: 37.635951 };
+  let initMarkerPos = { lat: 55.727326, lng: 37.635951 };
+  let initMarkerSize = new google.maps.Size(41, 41);
+
+  map = new google.maps.Map(document.querySelector(".find-us__map"), {
+    zoom: initZoom,
+    center: initCenter,
+    disableDefaultUI: true,
+  });
+
+  mapMarker = new google.maps.Marker({
+    position: initMarkerPos,
+    map: map,
+    icon: {
+      url: "img/marker-map.png",
+      size: initMarkerSize,
+      scaledSize: initMarkerSize,
+    },
+    draggarble: false,
+  });
+}
 
 ///////////////////////////////////
 //    Полифилл focus-visible     //
@@ -152,7 +216,7 @@ function applyFocusVisiblePolyfill(scope) {
     week: true,
     time: true,
     datetime: true,
-    'datetime-local': true
+    "datetime-local": true,
   };
 
   /**
@@ -164,10 +228,10 @@ function applyFocusVisiblePolyfill(scope) {
     if (
       el &&
       el !== document &&
-      el.nodeName !== 'HTML' &&
-      el.nodeName !== 'BODY' &&
-      'classList' in el &&
-      'contains' in el.classList
+      el.nodeName !== "HTML" &&
+      el.nodeName !== "BODY" &&
+      "classList" in el &&
+      "contains" in el.classList
     ) {
       return true;
     }
@@ -185,11 +249,11 @@ function applyFocusVisiblePolyfill(scope) {
     var type = el.type;
     var tagName = el.tagName;
 
-    if (tagName === 'INPUT' && inputTypesAllowlist[type] && !el.readOnly) {
+    if (tagName === "INPUT" && inputTypesAllowlist[type] && !el.readOnly) {
       return true;
     }
 
-    if (tagName === 'TEXTAREA' && !el.readOnly) {
+    if (tagName === "TEXTAREA" && !el.readOnly) {
       return true;
     }
 
@@ -206,11 +270,11 @@ function applyFocusVisiblePolyfill(scope) {
    * @param {Element} el
    */
   function addFocusVisibleClass(el) {
-    if (el.classList.contains('focus-visible')) {
+    if (el.classList.contains("focus-visible")) {
       return;
     }
-    el.classList.add('focus-visible');
-    el.setAttribute('data-focus-visible-added', '');
+    el.classList.add("focus-visible");
+    el.setAttribute("data-focus-visible-added", "");
   }
 
   /**
@@ -219,11 +283,11 @@ function applyFocusVisiblePolyfill(scope) {
    * @param {Element} el
    */
   function removeFocusVisibleClass(el) {
-    if (!el.hasAttribute('data-focus-visible-added')) {
+    if (!el.hasAttribute("data-focus-visible-added")) {
       return;
     }
-    el.classList.remove('focus-visible');
-    el.removeAttribute('data-focus-visible-added');
+    el.classList.remove("focus-visible");
+    el.removeAttribute("data-focus-visible-added");
   }
 
   /**
@@ -286,8 +350,8 @@ function applyFocusVisiblePolyfill(scope) {
     }
 
     if (
-      e.target.classList.contains('focus-visible') ||
-      e.target.hasAttribute('data-focus-visible-added')
+      e.target.classList.contains("focus-visible") ||
+      e.target.hasAttribute("data-focus-visible-added")
     ) {
       // To detect a tab/window switch, we look for a blur event followed
       // rapidly by a visibility change.
@@ -308,7 +372,7 @@ function applyFocusVisiblePolyfill(scope) {
    * @param {Event} e
    */
   function onVisibilityChange(e) {
-    if (document.visibilityState === 'hidden') {
+    if (document.visibilityState === "hidden") {
       // If the tab becomes active again, the browser will handle calling focus
       // on the element (Safari actually calls it twice).
       // If this tab change caused a blur on an element with focus-visible,
@@ -327,27 +391,27 @@ function applyFocusVisiblePolyfill(scope) {
    * focus.
    */
   function addInitialPointerMoveListeners() {
-    document.addEventListener('mousemove', onInitialPointerMove);
-    document.addEventListener('mousedown', onInitialPointerMove);
-    document.addEventListener('mouseup', onInitialPointerMove);
-    document.addEventListener('pointermove', onInitialPointerMove);
-    document.addEventListener('pointerdown', onInitialPointerMove);
-    document.addEventListener('pointerup', onInitialPointerMove);
-    document.addEventListener('touchmove', onInitialPointerMove);
-    document.addEventListener('touchstart', onInitialPointerMove);
-    document.addEventListener('touchend', onInitialPointerMove);
+    document.addEventListener("mousemove", onInitialPointerMove);
+    document.addEventListener("mousedown", onInitialPointerMove);
+    document.addEventListener("mouseup", onInitialPointerMove);
+    document.addEventListener("pointermove", onInitialPointerMove);
+    document.addEventListener("pointerdown", onInitialPointerMove);
+    document.addEventListener("pointerup", onInitialPointerMove);
+    document.addEventListener("touchmove", onInitialPointerMove);
+    document.addEventListener("touchstart", onInitialPointerMove);
+    document.addEventListener("touchend", onInitialPointerMove);
   }
 
   function removeInitialPointerMoveListeners() {
-    document.removeEventListener('mousemove', onInitialPointerMove);
-    document.removeEventListener('mousedown', onInitialPointerMove);
-    document.removeEventListener('mouseup', onInitialPointerMove);
-    document.removeEventListener('pointermove', onInitialPointerMove);
-    document.removeEventListener('pointerdown', onInitialPointerMove);
-    document.removeEventListener('pointerup', onInitialPointerMove);
-    document.removeEventListener('touchmove', onInitialPointerMove);
-    document.removeEventListener('touchstart', onInitialPointerMove);
-    document.removeEventListener('touchend', onInitialPointerMove);
+    document.removeEventListener("mousemove", onInitialPointerMove);
+    document.removeEventListener("mousedown", onInitialPointerMove);
+    document.removeEventListener("mouseup", onInitialPointerMove);
+    document.removeEventListener("pointermove", onInitialPointerMove);
+    document.removeEventListener("pointerdown", onInitialPointerMove);
+    document.removeEventListener("pointerup", onInitialPointerMove);
+    document.removeEventListener("touchmove", onInitialPointerMove);
+    document.removeEventListener("touchstart", onInitialPointerMove);
+    document.removeEventListener("touchend", onInitialPointerMove);
   }
 
   /**
@@ -360,7 +424,7 @@ function applyFocusVisiblePolyfill(scope) {
   function onInitialPointerMove(e) {
     // Work around a Safari quirk that fires a mousemove on <html> whenever the
     // window blurs, even if you're tabbing out of the page. ¯\_(ツ)_/¯
-    if (e.target.nodeName && e.target.nodeName.toLowerCase() === 'html') {
+    if (e.target.nodeName && e.target.nodeName.toLowerCase() === "html") {
       return;
     }
 
@@ -371,11 +435,11 @@ function applyFocusVisiblePolyfill(scope) {
   // For some kinds of state, we are interested in changes at the global scope
   // only. For example, global pointer input, global key presses and global
   // visibility change should affect the state at every scope:
-  document.addEventListener('keydown', onKeyDown, true);
-  document.addEventListener('mousedown', onPointerDown, true);
-  document.addEventListener('pointerdown', onPointerDown, true);
-  document.addEventListener('touchstart', onPointerDown, true);
-  document.addEventListener('visibilitychange', onVisibilityChange, true);
+  document.addEventListener("keydown", onKeyDown, true);
+  document.addEventListener("mousedown", onPointerDown, true);
+  document.addEventListener("pointerdown", onPointerDown, true);
+  document.addEventListener("touchstart", onPointerDown, true);
+  document.addEventListener("visibilitychange", onVisibilityChange, true);
 
   addInitialPointerMoveListeners();
 
@@ -383,8 +447,8 @@ function applyFocusVisiblePolyfill(scope) {
   // scope. This is because focus / blur events that originate from within a
   // shadow root are not re-dispatched from the host element if it was already
   // the active element in its own scope:
-  scope.addEventListener('focus', onFocus, true);
-  scope.addEventListener('blur', onBlur, true);
+  scope.addEventListener("focus", onFocus, true);
+  scope.addEventListener("blur", onBlur, true);
 
   // We detect that a node is a ShadowRoot by ensuring that it is a
   // DocumentFragment and also has a host property. This check covers native
@@ -395,17 +459,17 @@ function applyFocusVisiblePolyfill(scope) {
     // Since a ShadowRoot is a special kind of DocumentFragment, it does not
     // have a root element to add a class to. So, we add this attribute to the
     // host element instead:
-    scope.host.setAttribute('data-js-focus-visible', '');
+    scope.host.setAttribute("data-js-focus-visible", "");
   } else if (scope.nodeType === Node.DOCUMENT_NODE) {
-    document.documentElement.classList.add('js-focus-visible');
-    document.documentElement.setAttribute('data-js-focus-visible', '');
+    document.documentElement.classList.add("js-focus-visible");
+    document.documentElement.setAttribute("data-js-focus-visible", "");
   }
 }
 
 // It is important to wrap all references to global window and document in
 // these checks to support server-side rendering use cases
 // @see https://github.com/WICG/focus-visible/issues/199
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+if (typeof window !== "undefined" && typeof document !== "undefined") {
   // Make the polyfill helper globally available. This can be used as a signal
   // to interested libraries that wish to coordinate with the polyfill for e.g.,
   // applying the polyfill to a shadow root:
@@ -416,17 +480,17 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   var event;
 
   try {
-    event = new CustomEvent('focus-visible-polyfill-ready');
+    event = new CustomEvent("focus-visible-polyfill-ready");
   } catch (error) {
     // IE11 does not support using CustomEvent as a constructor directly:
-    event = document.createEvent('CustomEvent');
-    event.initCustomEvent('focus-visible-polyfill-ready', false, false, {});
+    event = document.createEvent("CustomEvent");
+    event.initCustomEvent("focus-visible-polyfill-ready", false, false, {});
   }
 
   window.dispatchEvent(event);
 }
 
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
   // Apply the polyfill to the global document, so that no JavaScript
   // coordination is required to use the polyfill in the top-level document:
   applyFocusVisiblePolyfill(document);
