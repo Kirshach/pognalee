@@ -18,7 +18,7 @@ if (emptyLinks.length !== 0) {
 ///////////////////////////////////
 
 let headerToggler = document.querySelector(".page-header__menu-toggler");
-if (headerToggler !== undefined) {
+if (headerToggler) {
   // Добавляем js-активные классы
   let pageHeader = document.querySelector(".page-header");
   let bottomContainer = document.querySelector(
@@ -81,21 +81,6 @@ if (headerToggler !== undefined) {
       }
     }
   });
-
-  let str = "2 4 7 8 10";
-  function iqTest(numbers) {
-    let tor = {};
-    let tf;
-    let res = numbers.split(" ").map((x) => (x % 2 ? true : false));
-    res.map((e) => (tor[e] = !tor[e] ? 1 : tor[e] + 1));
-    for (let key in tor) {
-      if (tor[key] == 1) {
-        tf = key;
-      }
-    }
-    console.log(tf, res); // для контроля
-    return res.indexOf(tf); // здесь возвращает -1
-  }
 
   /////
   // Назначаем переходы через JS чтобы избежать анимации при загрузке
@@ -166,6 +151,7 @@ let mapMarker;
 function initMap() {
   let initZoom = 15.5;
   let initCenter = { lat: 55.727326, lng: 37.635951 };
+  let initMarkerPos = { lat: 55.727826, lng: 37.635951 };
   let initMarkerSize = new google.maps.Size(41, 41);
 
   map = new google.maps.Map(document.querySelector(".find-us__map"), {
@@ -175,7 +161,7 @@ function initMap() {
   });
 
   mapMarker = new google.maps.Marker({
-    position: map.getCenter(),
+    position: initMarkerPos,
     map: map,
     icon: {
       path: google.maps.SymbolPath.CIRCLE,

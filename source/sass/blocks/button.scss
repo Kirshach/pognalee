@@ -9,15 +9,16 @@
 
   border: none;
   background-color: var(--accent-color);
-  transition: all 0.03s;
+  transition: $default-transition;
 
   &:hover {
     background-color: var(--accent-color2);
-    transition: all 0.1s cubic-bezier(0.19, 0.98, 0.57, 0.99);
+    transition: $hover-transition;
   }
 
   &:active {
     color: var(--main-color--hover);
+    transition: $active-transition;
   }
 }
 
@@ -43,8 +44,6 @@
     background-color: var(--main-color--lighter2);
     transform: rotate(135deg);
     clip-path: polygon(0% 0%, 100% 25%, 25% 100%);
-
-    transition: all 0.03s;
   }
 }
 

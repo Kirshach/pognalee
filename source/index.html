@@ -570,19 +570,53 @@
   </main>
   <footer class="page-footer">
     <a class="page-footer__site-logo site-logo site-logo--dark" aria-label="Погнали? Главная страница">
+      <picture>
+        <source media="(min-width: 600px) and (min-height: 600px), (min-width: 1200px)" type="image/webp" srcset="
+              img/logo-tablet-blue@1x.webp 1x,
+              img/logo-tablet-blue@2x.webp 2x
+            " />
+        <source media="(min-width: 600px) and (min-height: 600px), (min-width: 1200px)" srcset="
+              img/logo-tablet-blue@1x.png 1x,
+              img/logo-tablet-blue@2x.png 2x
+            " />
+        <source type="image/webp" srcset="
+              img/logo-mobile-blue@1x.webp 1x,
+              img/logo-mobile-blue@2x.webp 2x
+            " />
+        <img class="page-header__site-logo-img" src="img/logo-mobile-blue@1x.png" srcset="img/logo-mobile-blue@2x.png 2x" alt="Погнали?" />
+      </picture>
     </a>
     <ul class="page-footer__socials socials">
-      <li class="socials-item">
-        <a class="socials-link" href=""></a>
+      <li class="page-footer__socials-item">
+        <a class="page-footer__socials-link" href="">
+          <svg class="page-footer__socials-svg" width="45" height="45">
+            <use href="img/sprite.svg#icon-fb" />
+          </svg>
+        </a>
       </li>
-      <li class="socials-item">
-        <a class="socials-link" href=""></a>
+      <li class="page-footer__socials-item">
+        <a class="page-footer__socials-link" href="">
+          <svg class="page-footer__socials-svg" width="45" height="45">
+            <use href="img/sprite.svg#icon-vk" />
+          </svg>
+        </a>
       </li>
-      <li class="socials-item">
-        <a class="socials-link" href=""></a>
+      <li class="page-footer__socials-item">
+        <a class="page-footer__socials-link" href="">
+          <svg class="page-footer__socials-svg" width="45" height="45">
+            <use href="img/sprite.svg#icon-instagram" />
+          </svg>
+        </a>
       </li>
     </ul>
-    <a class="page-footer__developed-by">Разработано</a>
+    <div class="page-footer__bottom">
+      <a class="page-footer__developer-link" href="https://htmlacademy.ru/profile/kirshach" class="page-footer__developer-link">
+        <span class="page-footer__developed-by">Разработано</span>
+        <svg class="page-footer__developer-svg" width="27" height="34">
+          <use href="img/sprite.svg#icon-htmlacademy">
+        </svg>
+      </a>
+    </div>
   </footer>
   <script src="js/script-min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbusCN1btYjfmLqlR4L79pR2t98t7BTMA&callback=initMap" async defer></script>

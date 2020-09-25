@@ -5,3 +5,9 @@ $desktop-width: 1200px;
 
 // Шрифт и его фоллбэки
 $font-stack: "Blogger Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+// Значения переходов
+
+$default-transition: all 0.1s ease-in-out;
+$hover-transition: all 0.05s cubic-bezier(0.19, 0.7, 0.57, 0.99);
+$active-transition: all 0.02s;
