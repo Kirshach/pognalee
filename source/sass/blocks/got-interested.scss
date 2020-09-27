@@ -2,7 +2,7 @@
   position: relative;
   z-index: 5;
 
-  padding: calc(var(--section-br) + 4.5em) var(--page-padding) 28px;
+  padding: calc(var(--section-br) + 4.5em) var(--page-padding) calc(10% - 3px);
   margin: calc(-1 * var(--section-br)) 0 0;
 
   border-radius: 0 0 var(--section-br) var(--section-br);
@@ -51,9 +51,34 @@
 }
 
 .got-interested__contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: start;
+
+  width: max-content;
   margin: 0 auto;
+
+  .contact-methods__item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    max-width: 280px;
+  }
+
+  .contact-methods__icon {
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
   .contact-methods__link {
+    position: static;
+    padding-right: 1.3em;
+
     color: var(--accent-color);
+    transform: none;
+
     transition: all 0.1s;
   }
   .contact-methods__link:hover {
@@ -80,36 +105,22 @@
   .got-interested {
     padding: calc(var(--section-br) + 4.5em) var(--page-padding--wider)
       calc(5% + 23px);
-    // margin: calc(-1 * var(--section-br)) 0 0;
-
-    // border-radius: 0 0 var(--section-br) var(--section-br);
-
-    // background-color: var(--main-color--lighter);
   }
 
   .got-interested__heading {
-    // padding: 0;
     margin-bottom: 1.26em;
-
-    // text-align: center;
   }
 
   .got-interested__paragraph {
-    // margin: 0 auto;
-
-    // text-align: center;
-
     font-size: 1.75rem;
-    // font-weight: 300;
     line-height: 115%;
-
-    // color: var(--ternary-color);
   }
 
   .got-interested__paragraph--top {
     max-width: unset;
 
     margin-bottom: 2.3em;
+
     .got-interested__mobile-br {
       display: none;
     }
@@ -134,30 +145,19 @@
   }
 
   .got-interested__contact-methods {
-    width: 100%;
-    max-width: 650px;
+    align-items: flex-end;
+    width: content;
+    margin: 0 auto;
 
     font-size: 1.75rem;
-    // margin: 0 auto;
 
     .contact-methods__item {
-      height: 68px;
+      max-width: unset;
+      min-height: 68px;
     }
 
     .contact-methods__link {
       left: 78px;
-      // color: var(--accent-color);
-      // transition: all 0.1s;
-    }
-    .contact-methods__link:hover {
-      // color: var(--accent-color2);
-      // transition: color 0.02s;
-    }
-    .contact-methods__link:active {
-      // opacity: 0.3;
-    }
-    .contact-methods__link:active + .contact-methods__icon {
-      // opacity: 0.3;
     }
 
     .contact-methods__icon {
@@ -173,40 +173,16 @@
 
 @media (min-width: $desktop-width) {
   .got-interested {
-    padding: calc(var(--section-br) + 107px) var(--page-padding--wider) 114px;
-    // margin: calc(-1 * var(--section-br)) 0 0;
-
-    // border-radius: 0 0 var(--section-br) var(--section-br);
-
-    // background-color: var(--main-color--lighter);
+    padding: calc(var(--section-br) + 5% + 35px) var(--page-padding--wider)
+      calc(5% + 29px);
   }
 
   .got-interested__heading {
-    // padding: 0;
     margin-bottom: 1.2em;
-
-    // text-align: center;
-  }
-
-  .got-interested__paragraph {
-    // margin: 0 auto;
-
-    // text-align: center;
-
-    // font-size: 1.75rem;
-    // font-weight: 300;
-    // line-height: 115%;
-
-    // color: var(--ternary-color);
   }
 
   .got-interested__paragraph--top {
-    // max-width: unset;
-
     margin-bottom: 2.05em;
-    .got-interested__mobile-br {
-      // display: none;
-    }
   }
 
   .got-interested__form {
@@ -216,7 +192,6 @@
 
   .one-input-form__submit-button {
     width: auto;
-    // border-radius: 0 20px 20px 0;
   }
 
   .one-input-form__submit-button-span {
@@ -227,17 +202,16 @@
   }
 
   .got-interested__paragraph--bottom {
-    margin-bottom: 1.9em;
+    margin-bottom: calc(10% - 75px);
   }
 
   .got-interested__contact-methods {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    max-width: 800px;
-    // font-size: 1.75rem;
-    // margin: 0 auto;
+    width: auto;
+    max-width: 900px;
 
     .contact-methods__item {
       display: flex;
@@ -253,18 +227,6 @@
     .contact-methods__link {
       position: static;
       transform: none;
-      // color: var(--accent-color);
-      // transition: all 0.1s;
-    }
-    .contact-methods__link:hover {
-      // color: var(--accent-color2);
-      // transition: color 0.02s;
-    }
-    .contact-methods__link:active {
-      // opacity: 0.3;
-    }
-    .contact-methods__link:active + .contact-methods__icon {
-      // opacity: 0.3;
     }
   }
 }

@@ -1,8 +1,10 @@
+$about-service-min-height: 352px;
+
 .about-service {
   position: relative;
   z-index: 9;
 
-  min-height: 352px;
+  min-height: $about-service-min-height;
   padding: 2.05em var(--page-padding--wider) 63px;
   margin: 0;
 
@@ -42,10 +44,6 @@
     right: 190px;
 
     width: calc(50% - 80px);
-
-    @media (max-width: 479px) {
-      display: none;
-    }
   }
 }
 
@@ -75,8 +73,7 @@
 
   max-width: 250px;
   padding: 0;
-  margin: 0;
-  margin-bottom: 1.2em;
+  margin: 0 0 1.2em;
 
   font-weight: 300;
   line-height: 137%;
@@ -96,8 +93,10 @@
 ///////////////////////////////////
 
 @media (min-width: $tablet-width) {
+  $about-service-min-height: 670px;
+
   .about-service {
-    min-height: 670px;
+    min-height: $about-service-min-height;
     padding: 2.4em var(--page-padding--wider) 90px;
   }
 
@@ -146,6 +145,21 @@
     width: calc(100% - 344px);
     max-width: 330px;
   }
+
+  // Дополнительные правила для лучшего отображения на
+  // шести-семидюймовых планшетах
+  @media (max-width: $tablet-width + 99px) {
+    .about-service__bg-img {
+      transform: scale(0.75) translateX(20px);
+    }
+    .about-service__paragraph {
+      width: calc(100% - 220px);
+    }
+
+    .about-service__button {
+      width: calc(100% - 265px);
+    }
+  }
 }
 
 ///////////////////////////////////
@@ -153,8 +167,10 @@
 ///////////////////////////////////
 
 @media (min-width: $desktop-width) {
+  $about-service-min-height: 750px;
+
   .about-service {
-    min-height: 750px;
+    min-height: $about-service-min-height;
     padding: 8em var(--page-padding--wider) 160px;
   }
 
@@ -163,6 +179,9 @@
   }
 
   .about-service__bg {
+    top: unset;
+    bottom: $about-service-min-height;
+
     &::before {
       top: 70px;
       left: calc(20% - 228px);

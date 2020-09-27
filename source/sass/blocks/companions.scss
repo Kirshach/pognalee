@@ -26,8 +26,8 @@
 
     width: 132px;
     height: 132px;
-    background-color: var(--main-color--darker3);
     border-radius: 20px;
+    background-color: var(--main-color--darker3);
   }
 }
 
@@ -91,8 +91,7 @@
 
     overflow: hidden;
 
-    // Хак для webkit-браузеров, избавляющий от бага анимации увеличения фото при зуме
-    // (без него появляется временный видимый overflow)
+    // Правило для webkit-браузеров, избавляющее от бага анимации при наведении
     transform: translateZ(0);
   }
 
@@ -126,6 +125,7 @@
     left: 50%;
 
     display: flex;
+
     padding: 0;
     margin: 0;
     list-style: none;
@@ -201,10 +201,20 @@
   }
 }
 
+@media (max-width: 319px) {
+  .companions__user-card {
+    width: 230px;
+
+    .user-card__flags-list {
+      top: 235px;
+    }
+  }
+}
+
 // Кнопочка
 
 .companions__button {
-  width: 270px;
+  max-width: 270px;
   margin: 0 auto;
 }
 
@@ -337,7 +347,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    padding: calc(var(--section-br) + 128px) var(--page-padding) calc(4% + 77px)
+    padding: calc(5% + 111px) var(--page-padding) calc(6% + 47px)
       var(--page-padding--wider);
     background: url("../img/rogovaya-back-desktop@1x.jpg") no-repeat top 442px
         left 16.4% / 285px 285px,

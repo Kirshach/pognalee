@@ -10,14 +10,14 @@
 .contact-methods__item {
   position: relative;
 
-  height: 45px;
+  min-height: 45px;
 }
 
 .contact-methods__icon {
   background-color: var(--main-color--darker);
+  fill: var(--accent-color);
   border-radius: 50%;
 
-  fill: var(--accent-color);
   transition: all 0.1s;
 }
 
@@ -27,7 +27,7 @@
   top: 50%;
   left: 53px;
 
-  height: 1.875em;
+  min-height: 1.875em;
   padding: 0.5em;
 
   transform: translateY(-50%);
@@ -44,7 +44,7 @@
   }
 
   .contact-methods__item {
-    height: 50px;
+    min-height: 50px;
   }
 
   .contact-methods__icon {
@@ -64,12 +64,11 @@
 @media (min-width: $tablet-width) and (min-height: $tablet-width) {
   .contact-methods {
     width: 100%;
-
     font-size: 1.45rem;
   }
 
   .contact-methods__item {
-    height: 57px;
+    min-height: 57px;
   }
 
   .contact-methods__icon {
@@ -87,7 +86,7 @@
     }
 
     .contact-methods__item {
-      height: 68px;
+      min-height: 68px;
     }
 
     .contact-methods__icon {

@@ -4,8 +4,7 @@ $promo-bg-height: 478px;
   position: relative;
   z-index: 10;
 
-  padding: 0;
-  padding-top: calc(#{$promo-bg-height} + 3rem);
+  padding: calc(#{$promo-bg-height} + 3rem) 0 0;
   margin: 0;
 
   background-color: var(--main-color);
@@ -35,12 +34,11 @@ $promo-bg-height: 478px;
 
 .promo__page-heading {
   position: absolute;
-  top: calc(var(--header-top-height) + 21px);
+  top: unquote("calc(var(--header-top-height) + 21px)");
   left: 50%;
   z-index: 2;
 
-  width: max-content;
-  max-width: 83%;
+  width: 83%;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -59,7 +57,7 @@ $promo-bg-height: 478px;
   display: flex;
 
   height: 40px;
-  min-width: 270px;
+  min-width: 240px;
   width: calc(100% - var(--page-padding) * 2);
 
   .contact-methods-mini__link {
@@ -134,7 +132,9 @@ $promo-bg-height: 478px;
 //
 
 .promo__what-to-do {
-  padding-bottom: 39px;
+  padding: 0 0 39px;
+  margin: 0;
+
   background: linear-gradient(
     to bottom,
     transparent calc((100% - 39px) / 4),
@@ -206,15 +206,19 @@ $promo-bg-height: 478px;
 
 @media (min-width: $tablet-width) {
   $promo-bg-height: 994px;
+  $promo-padding-bottom: 56px;
 
   .promo {
-    padding-top: 162px;
-    padding-bottom: 57px;
+    min-height: 1230px;
+    padding: 162px 0 $promo-padding-bottom;
 
     background-color: var(--main-color--tablet);
   }
 
   .promo__bg {
+    top: unset;
+    bottom: 236px;
+
     height: $promo-bg-height;
 
     background: url("../img/globe-back-tablet@1x.jpg") no-repeat bottom 0 left -358px;
@@ -226,12 +230,14 @@ $promo-bg-height: 478px;
   }
 
   .promo__bg-img {
-    top: 404px;
+    top: unset;
+    bottom: 138px;
     right: 111px;
   }
 
   .promo__page-heading {
     position: static;
+
     margin: 0 auto 1.43em;
     transform: none;
   }
@@ -249,6 +255,7 @@ $promo-bg-height: 478px;
   }
 
   .promo__quote {
+    max-width: 270px;
     margin-bottom: 1.6em;
 
     font-size: 1.75rem;
@@ -256,6 +263,9 @@ $promo-bg-height: 478px;
   }
 
   .promo__quote-footer {
+    max-width: 270px;
+    margin-bottom: 155px;
+
     font-size: 1.3125rem;
     line-height: 119%;
     text-align: left;
@@ -270,7 +280,12 @@ $promo-bg-height: 478px;
   //
 
   .promo__what-to-do {
-    background: var(--main-color--lighter);
+    position: absolute;
+    bottom: $promo-padding-bottom;
+    left: 0;
+
+    width: 100%;
+    background: transparent;
   }
 
   .what-to-do__list {
@@ -342,6 +357,8 @@ $promo-bg-height: 478px;
   }
 
   .promo__bg {
+    bottom: 0;
+
     height: $promo-bg-height;
 
     background: url("../img/globe-back-desktop@1x.jpg") no-repeat bottom 0 left -180px;
@@ -353,7 +370,7 @@ $promo-bg-height: 478px;
   }
 
   .promo__bg-img {
-    top: 110px;
+    bottom: 0px;
     right: calc(20% + 117px);
   }
 
@@ -379,7 +396,11 @@ $promo-bg-height: 478px;
     top: initial;
     z-index: 1;
 
-    margin: 10px 18px 100px 0;
+    margin: 10px 18px 115px 0;
+  }
+
+  .promo__quote-footer {
+    margin-bottom: 0;
   }
 
   //
@@ -387,7 +408,10 @@ $promo-bg-height: 478px;
   //
 
   .promo__what-to-do {
+    position: static;
     clear: both;
+
+    padding: 0;
     background: transparent;
   }
 

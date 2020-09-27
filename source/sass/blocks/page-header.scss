@@ -178,7 +178,7 @@ $menu-toggler-width: 35px;
   z-index: 100;
 
   width: 100vw;
-  min-width: $mobile-width;
+  min-width: $mobile-width - 40px;
   // Переменная --vh задаётся специальным скриптом и используется для
   // определения реальной высоты вьюпорта без учёта панели навигации
   height: calc((var(--vh, 1vh) * 100));

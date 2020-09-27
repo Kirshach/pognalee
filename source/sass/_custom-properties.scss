@@ -49,7 +49,7 @@
   // Паддинги страниц
   //
 
-  --page-padding: calc(10% - 7px);
+  --page-padding: max(calc(10% - 7px), 0px);
   --page-padding--wider: calc(10% + 17px);
 
   @media (min-width: $tablet-width) {

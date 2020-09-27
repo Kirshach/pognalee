@@ -4,6 +4,10 @@
   line-height: 111%;
 
   color: var(--ternary-color);
+
+  @media (max-width: 300px) {
+    font-size: 2rem;
+  }
 }
 
 ///////////////////////////////////
